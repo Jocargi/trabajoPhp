@@ -36,4 +36,4 @@ nombre VARCHAR(30) PRIMARY KEY COMMENT 'El nombre hace referencia a lo que seria
 correo VARCHAR(50) NOT NULL,
 contrasena VARCHAR(25) NOT NULL,
 rol BOOLEAN NOT NULL COMMENT '0. Usuario corriente | 1. Administrador'
-)
+)ENGINE=INNODB;
