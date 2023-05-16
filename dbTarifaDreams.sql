@@ -35,5 +35,7 @@ CREATE TABLE IF NOT EXISTS usuario(
 nombre VARCHAR(30) PRIMARY KEY COMMENT 'El nombre hace referencia a lo que seria el nombre de usuario, no el nombre de la persona',
 correo VARCHAR(50) NOT NULL,
 contrasena VARCHAR(25) NOT NULL,
-rol BOOLEAN NOT NULL COMMENT '0. Usuario corriente | 1. Administrador'
+rol BOOLEAN NOT NULL COMMENT '0. Usuario corriente | 1. Administrador',
+id_cliente char(9),
+CONSTRAINT FK_usuario_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(dni) ON UPDATE CASCADE ON DELETE UPDATE
 )ENGINE=INNODB;
