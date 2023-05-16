@@ -23,8 +23,8 @@ descripcion TEXT NULL
 
 CREATE TABLE IF NOT EXISTS reserva (
 id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-id_cliente CHAR(9),
-id_habitacion SMALLINT UNSIGNED,
+id_cliente CHAR(9)NOT NULL,
+id_habitacion SMALLINT UNSIGNED NOT NULL,
 fecha_entrada DATE NOT NULL,
 fecha_salida DATE NOT NULL,
 CONSTRAINT FK_reserva_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(dni) ON UPDATE CASCADE ON DELETE RESTRICT,
@@ -35,5 +35,7 @@ CREATE TABLE IF NOT EXISTS usuario(
 nombre VARCHAR(30) PRIMARY KEY COMMENT 'El nombre hace referencia a lo que seria el nombre de usuario, no el nombre de la persona',
 correo VARCHAR(50) NOT NULL,
 contrasena VARCHAR(25) NOT NULL,
-rol BOOLEAN NOT NULL COMMENT '0. Usuario corriente | 1. Administrador'
+rol BOOLEAN NOT NULL COMMENT '0. Usuario corriente | 1. Administrador',
+id_cliente CHAR(9) NOT NULL,
+CONSTRAINT FK_usuario_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(dni) ON UPDATE CASCADE ON DELETE UPDATE
 )ENGINE=INNODB;
