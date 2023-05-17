@@ -11,9 +11,9 @@
     <header>
         <div class="parte-superior">
             <div class="parte-superior-izquierda">
-                <a href="index.html">Tarifa Dreams</a>
+                <a href="index.php">Tarifa Dreams</a>
             </div>
-            <a href="formularioRegistro.php"><img src="images/logo.png" alt="logo"></a>
+            <a href="login.php"><img src="images/logo.png" alt="logo"></a>
             <div class="parte-superior-derecha">
             </div>
         </div>

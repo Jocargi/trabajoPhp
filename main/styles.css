@@ -77,11 +77,10 @@ body
 }
 
 .formulario{
-    background-color: black;
+  background-color: rgba(31, 28, 28, 0.6);
     padding: 50px 0px;
     width: 50%;
     color: aliceblue;
-    opacity: 0.7;
     z-index: 1;
     position: absolute;
 }
