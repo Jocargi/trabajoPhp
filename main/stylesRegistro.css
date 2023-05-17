@@ -1,0 +1,93 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
+pre, form, fieldset, input, textarea, p, blockquote, th, td { 
+  padding:0;
+  margin:0;}
+
+fieldset, img {border:0}
+
+ol, ul, li {list-style:none}
+
+:focus {outline:none}
+
+body,
+input,
+textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #4c4c4c;
+}
+
+p {
+  font-size: 1.3em;
+  text-align: justify;
+  width: 70%;
+  padding-left: 55px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #140c0c;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+html{
+  background-color: #d1c7c7;
+}
+
+.testbox {
+  margin: 2% auto;
+  width: 60%; 
+  border-radius: 8px/7px; 
+  background-color: #ebebeb; 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: solid 1px #cbc9c9;
+  text-align: center;
+}
+
+
+hr{
+  color: #a9a9a9;
+  opacity: 0.8;
+  width: 80%;
+}
+
+input[type=text]{
+  display: inline-block;
+  margin: 5px; 
+  width: 80%; 
+  height: 39px; 
+  border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  background-color: #fff; 
+  box-shadow: 1px 2px 5px rgba(44, 24, 10, 0.2); 
+  border: solid 1px #cbc9c9; 
+  padding-left: 10px;
+}
+
+input[type="radio"]{
+    display: block;
+}
+
+::placeholder{
+    opacity: 0.4;
+}
+
+input[type="submit"] {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 12px;
+  color: white;
+  padding: 10px 25px 15px 20px;
+  text-decoration: none;
+  border-radius: 3px; 
+  background-color: #8a2e17; 
+  box-shadow: 0 1px rgba(0, 0, 0, 0.15);
+  transition: all 0.22s linear 0s;
+}
+
+input[type="submit"]:hover {
+  top: 3px;
+  background-color:#3f3732;
+  box-shadow: none;
+}
