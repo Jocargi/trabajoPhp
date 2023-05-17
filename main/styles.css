@@ -93,6 +93,17 @@ body
     padding: 25px; 
 }
 
+.formulario input[type="submit"]{
+  margin: 15px;
+  width: 300px;
+  height: 75px;
+  text-align: center;
+  text-justify:distribute-all-lines ;
+  color: white;
+  background-color: rgba(130, 10, 10, 1);
+  border-radius: 12px;
+}
+
 
 * {box-sizing:border-box}
 
