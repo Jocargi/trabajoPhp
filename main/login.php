@@ -10,11 +10,14 @@
 <body>
 
 <div class="form">
-    <form action="loginLogica.php" method="POST">
+    <form action="login.php" method="POST">
         <input type="email" class="input-login" id="email" name="email" placeholder="Nombre de usuario o correo electronico">
         <input type="password" id="password" class="input-login" name="password" placeholder="Contraseña" />
-        <?php include "controlador.php"; ?>
         <input type="submit" name="enviar" class="submit" value="INICIAR SESION">
+        <?php 
+            include "conexion.php";
+            include "loginLogica.php";
+        ?>
         <div class="no-registrado">
         <a href="formularioRegistro.php">¿Aun no te has registrado?</a>
         </div>

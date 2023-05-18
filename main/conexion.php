@@ -12,8 +12,6 @@ try{
 
 } catch(PDOException $e){
     echo "Se ha producido un error al intentar conectar al servidor" .$e->getMessage();
-} finally {
-    
 }
 
 ?>
