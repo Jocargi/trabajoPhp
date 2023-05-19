@@ -13,7 +13,7 @@
             <div class="parte-superior-izquierda">
                 <a href="index.php">Tarifa Dreams</a>
             </div>
-            <a href="login.php"><img src="images/logo.png" alt="logo"></a>
+            <a href="login.php"><img src="images/user-676.svg" alt="logo"></a>
             <div class="parte-superior-derecha">
             </div>
         </div>
