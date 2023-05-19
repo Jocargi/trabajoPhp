@@ -32,14 +32,16 @@ if(!empty($resultado)){
     header("Location: login.php");
 }
 
-echo "<pre>";
-print_r($resultado);
-echo "</pre>";
-
 $_SESSION['correo'] = $email;
+
 if(($resultado['rol'])){
-     header("Location: viewAdministrador.php");
+    header("Location: viewAdministrador.php");
+} else{
+    header("Location: viewMenuCliente.php"); 
 }
+
+
+
 }
 
 

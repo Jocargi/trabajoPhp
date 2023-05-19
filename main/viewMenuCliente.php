@@ -1,8 +1,5 @@
 <?php
-session_start();
-if (empty($_SESSION['correo'])){
-    header("Location: login.php");
-}
+    require_once "auth_inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +12,6 @@ if (empty($_SESSION['correo'])){
 </head>
 <body>
     <h1>Este es un menu de cliente</h1>
-    <a href="cerrar-sesion.php"> cerrar sesion</a>
+    <input type="button" name="cerrar_sesion.php" value="Cerrar Sesion" onclick="location.href='cerrar_sesion.php'">
 </body>
 </html>
