@@ -5,18 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarifa Dreams</title>
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="stylesMain.css" type="text/css">
 </head>
 <body>
     <header>
         <div class="parte-superior">
+
             <div class="parte-superior-izquierda">
                 <a href="index.php">Tarifa Dreams</a>
             </div>
-            <a href="login.php"><img src="images/user-676.svg" alt="logo"></a>
+            
             <div class="parte-superior-derecha">
+              <a href="login.php"><img src="images/user-6769.svg" alt="logo"></a>
             </div>
         </div>
+
         <div class="parte-abajo">
             <ul>
                 <li><a href="">Servicios</a></li>
@@ -32,7 +35,7 @@
             <img src="images/16468231897426.jpg" alt="">
             <div class="formulario">
                 <span>HAZ TU RESERVA YA</span>
-                <form action="index.html" method="post">
+                <form action="index.php" method="post">
                     <label for="numero-personas">Personas</label>
                     <input type="number" name="numero-personas" id="numero-personas" required>
                     <label for="fecha-entrada">Fecha entrada</label>

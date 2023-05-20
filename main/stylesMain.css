@@ -6,16 +6,15 @@
 
 header{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .parte-superior{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: brown;
-    flex-basis: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(165, 42, 42);
+  flex-basis: 100%;
 }
 
 .parte-superior-izquierda{
@@ -24,13 +23,19 @@ header{
 }
 
 .parte-superior-izquierda a {
-    text-decoration: none;
-    color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration: none;
+  color: aliceblue;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 24px;
 }
 
-.parte-superior-derecha{
-   flex-basis: 84%;
+.parte-superior > .parte-superior-derecha{
+    flex-basis: 10%;
+}
+
+.parte-superior-derecha a > img{
+  width: 96px;
+  padding-top: 2px;
 }
 
 .parte-abajo{
