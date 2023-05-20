@@ -12,10 +12,10 @@
 <body>
     <div class="main-container">
         <div class="form-container">
-            <div class="img-login">
-                <img src="images/user-6769.svg" alt="">
-            </div>
             <div class="form">
+                <div class="img-login">
+                    <img src="images/user-6769.svg" alt="">
+                </div>
                 <form action="login.php" method="POST">
                     <input type="email" class="input-login" id="email" name="email" placeholder="Nombre de usuario o correo electronico">
                     <input type="password" id="password" class="input-login" name="password" placeholder="Contraseña" />
