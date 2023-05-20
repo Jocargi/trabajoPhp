@@ -1,4 +1,6 @@
-CREATE DATABASE tarifadreams CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE if not exists tarifadreams CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+USE tarifadreams;
 
 CREATE TABLE IF NOT EXISTS cliente(
 dni CHAR(9) PRIMARY KEY,
@@ -37,5 +39,5 @@ correo VARCHAR(50) NOT NULL UNIQUE,
 contrasena VARCHAR(25) NOT NULL,
 rol BOOLEAN NOT NULL COMMENT '0. Usuario corriente | 1. Administrador',
 id_cliente CHAR(9) NOT NULL,
-CONSTRAINT FK_usuario_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(dni) ON UPDATE CASCADE ON DELETE UPDATE
+CONSTRAINT FK_usuario_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(dni) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE=INNODB;
