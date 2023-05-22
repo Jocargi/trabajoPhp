@@ -40,7 +40,7 @@ main{
 .form {
   display: flex;
   justify-content: center;
-  margin-top: 15%;
+  margin-top: 5%;
   border-radius: 7px; 
   background-color: #ebebeb; 
   box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
@@ -86,6 +86,17 @@ input[type="checkbox"]{
 
 ::placeholder{
     opacity: 0.4;
+}
+
+.password{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+}
+
+input[type="password"]{
+  width: 70%;
 }
 
 input[type="submit"] {

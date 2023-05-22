@@ -13,7 +13,7 @@ $enviar_pressed = isset($_POST["enviar"]);
 
 if($enviar_pressed){
 
-$sql = "select correo, contrasena, rol from usuario where correo like :email and contrasena like :password";
+$sql = "SELECT correo, contrasena, rol FROM usuario WHERE correo LIKE :email AND contrasena LIKE :password";
 
 $array_values=[];
 $resultado=[];

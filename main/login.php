@@ -25,7 +25,7 @@
                     include "loginLogica.php";
                     ?>
                     <div class="no-registrado">
-                        <a href="formularioRegistro.php">¿Aun no te has registrado?</a>
+                        <a href="vistaformularioRegistro.php">¿Aun no te has registrado?</a>
                     </div>
                 </form>
             </div>
