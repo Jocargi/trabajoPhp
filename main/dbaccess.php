@@ -11,3 +11,4 @@ try{
 }catch(PDOException $e){
     $message = $e->getMessage();
     echo $message;
+}
