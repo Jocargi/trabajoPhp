@@ -35,7 +35,7 @@ if(!empty($resultado)){
 $_SESSION['correo'] = $email;
 
 if(($resultado['rol'])){
-    header("Location: viewAdministrador.php");
+    header("Location: vistaMenuAdministrador.php");
 } else{
     header("Location: viewMenuCliente.php"); 
 }
