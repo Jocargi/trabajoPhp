@@ -174,3 +174,18 @@ body
   from {opacity: .4}
   to {opacity: 1}
 }
+
+/* main/views/modificar_cliente.php */
+#body_modificar_cliente {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+#header_modificar_cliente {
+     margin-top: 2%;
+}
+
+#main_modificar_cliente {
+     padding-top: 5%;
+}
