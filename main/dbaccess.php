@@ -4,11 +4,10 @@ $db_name = 'tarifadreams';
 $user = 'root';
 $pass = '';
 
-$cliente_enviado = isset($_GET);
+$pdo = null;
 try{
-    $pdo = new PDO("mysql:host=$server;dbname=$db_name", $user, $pass);
+    $pdo = new PDO("mysql:host=$server;dbname=$db_name;charset=utf8", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }catch(PDOException $e){
-    $message = $e->getMessage();
-    echo $message;
+    exit($e->getMessage());
 }
