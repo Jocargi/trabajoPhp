@@ -70,18 +70,18 @@
     </div>
 
     <div class="paginador">
+        <?php include "registros_totales.php"; ?>
         <input type="submit" name="primera_pagina" value="&lt;&lt;" <?php echo $btn_primera_pagina; ?> >
         <input type="submit" name="anterior" value="&lt;">
         <input type="number" name="pagina" value="<?php echo $pagina; ?>">
-        <input type="submit" name="siguiente" value="&gt;">
-        <input type="submit" name="ultima_pagina" value="&gt;&gt; ">
+        <input type="submit" name="siguiente" value="&gt;" <?php echo $btn_ultima_pagina; ?>>
+        <input type="submit" name="ultima_pagina" value="&gt;&gt;" <?php echo $btn_ultima_pagina; ?>>
         <select name="registros_pagina">
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="6">6</option>
+            <option value="2" <?php echo $selected1; ?>>2</option>
+            <option value="4" <?php echo $selected2; ?>>4</option>
+            <option value="6" <?php echo $selected3; ?>>6</option>
         </select>
 
-        <?php include "registros_totales.php"; ?>
     </div>
 </form>
 

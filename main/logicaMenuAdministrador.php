@@ -11,8 +11,12 @@
     
     $registrosPagina = isset($_POST['registros_pagina']) ? (int) $_POST['registros_pagina'] : 2;
 
+    $selected1 = (int)$registrosPagina  == 2 ? "selected" : "none";
+    $selected2 = (int)$registrosPagina  == 4 ? "selected" : "none";
+    $selected3 = (int)$registrosPagina  == 6 ? "selected" : "none";
+    
     if(isset($_POST['siguiente'])){
-        $pagina = (int) $_POST['pagina']+ 1;
+            $pagina = (int) $_POST['pagina']+ 1;
     }
 
     if(isset($_POST['anterior'])){
@@ -119,6 +123,5 @@
         echo "<td>"."<input type='submit' name='eliminar' id='btn_eliminar' value='ELIMINAR'>"."</td>"; 
         echo "</tr>";
     }
-
 
 ?>
