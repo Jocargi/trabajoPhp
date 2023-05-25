@@ -40,8 +40,6 @@ if(($resultado['rol'])){
     header("Location: viewMenuCliente.php"); 
 }
 
-
-
 }
 
 

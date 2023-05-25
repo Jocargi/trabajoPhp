@@ -49,7 +49,7 @@
                 <input type="text" name="direccion" placeholder="..." value="<?php if (isset($_POST['direccion'])) echo $_POST['direccion']; ?>">
             </div>
 
-            <div class="gr3">
+            <div class="gr3"> 
             
                 <label for="localidad">Localidad:</label>
                 <input type="text" name="localidad" placeholder="..." value="<?php if (isset($_POST['localidad'])) echo $_POST['localidad']; ?>">

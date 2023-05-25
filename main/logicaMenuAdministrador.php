@@ -108,6 +108,8 @@
         }
         echo "</tr>";
         echo "</thead>";
+
+        
     
     while($resultado = $stmt -> fetch()){
         echo "<tr>";
@@ -119,8 +121,8 @@
         echo "<td>".$resultado["direccion"]."</td>";
         echo "<td>".$resultado["localidad"]."</td>";
         echo "<td>".$resultado["telefono"]."</td>";
-        echo "<td>"."<input type='submit' name='modificar' id='btn_modificar' value='MODIFICAR'>"."</td>"; 
-        echo "<td>"."<input type='submit' name='eliminar' id='btn_eliminar' value='ELIMINAR'>"."</td>"; 
+        echo "<td>"."<input type='button' name='modificar' id='btn_modificar' value='MODIFICAR'>" . "</td>"; 
+        echo "<td>"."<input type='button' name='eliminar' id='btn_eliminar' value='ELIMINAR' onclick=\" <?php header('Location: eliminarCliente.php'); ?> \" >" . "</td>"; 
         echo "</tr>";
     }
 
