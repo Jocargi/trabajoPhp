@@ -13,10 +13,6 @@ $campos = [
 
     require_once "conexion.php";
 
-   /*  $submit = isset($_POST['filtrar']);
-
-    if(!$submit) return; */
-
     $pagina = (isset($_POST['pagina'])) ? (int) $_POST['pagina'] : 1;
     
     $registrosPagina = isset($_POST['registros_pagina']) ? (int) $_POST['registros_pagina'] : 2;
@@ -91,7 +87,6 @@ $campos = [
         $arrayValues_cliente[':telefono'] = "%".$_POST['telefono']."%";
     }
 
-    
     $limit = isset($_POST['registros-pagina']) ? (int) $_POST['registros-pagina']:2;
 
     $empieza_desde = ($pagina-1)*$registrosPagina;
@@ -124,8 +119,8 @@ $campos = [
         echo "<td>".$resultado["direccion"]."</td>";
         echo "<td>".$resultado["localidad"]."</td>";
         echo "<td>".$resultado["telefono"]."</td>";
-       // echo "<td>"."<input type='submit' name='modificar' id='btn_modificar' value='MODIFICAR'>" . "</td>"; 
-        //echo "<td>". "<input type='button' name='$correoEliminacion' id='btn_eliminar' value='ELIMINAR' onclick= eliminarCliente('$correoEliminacion') >". "</td>";
+        echo "<td>"."<input type='submit' name='modificar' id='btn_modificar' value='MODIFICAR'>" . "</td>"; 
+        echo "<td>"."<input type='button' name='$correoEliminacion' id='btn_eliminar' value='ELIMINAR' onclick= eliminarCliente('$correoEliminacion') >". "</td>";
         echo "</tr>";
     }
 ?>

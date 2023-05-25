@@ -1,5 +1,4 @@
-
-function eliminarCliente(correoE) {
+function eliminarCliente(correo) {
     var confirmar = confirm("¿Estás seguro de que deseas eliminar el cliente con correo: " + correo + "?");
     if (confirmar) {
         var form = document.createElement("form");
@@ -9,7 +8,7 @@ function eliminarCliente(correoE) {
         var input = document.createElement("input");
         input.setAttribute("type", "hidden");
         input.setAttribute("name", "correo");
-        input.setAttribute("value", correoE);
+        input.setAttribute("value", correo);
 
         form.appendChild(input);
         document.body.appendChild(form);

@@ -3,15 +3,12 @@
     require_once "conexion.php";
     require_once "auth_inc.php";
 
-    echo $_POST['correo']."1";
-
     $sql_delete = "DELETE FROM CLIENTE WHERE correo = :correo";
 
-    $arrayValues = [];
-    $arrayValues['correo'] = $_POST['correo'];
+    $arrayValues_cliente[':correo'] = $_POST['correo'];
 
     $stmt = $pdo->prepare($sql_delete);
-    $resultado = $stmt->execute($arrayValues);
+    $resultado = $stmt->execute($arrayValues_cliente);
 
     if($resultado){
         header("Location: vistaMenuAdministrador.php");
