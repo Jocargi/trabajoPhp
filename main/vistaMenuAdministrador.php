@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Administrador</title>
     <link rel="stylesheet" href="menuAdministrador.css" type="text/css">
+    <script src="prueba.js" type="text/javascript"></script>
 </head>
 <body>
     <header>
