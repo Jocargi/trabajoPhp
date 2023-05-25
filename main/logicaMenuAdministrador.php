@@ -31,8 +31,8 @@
     $sql_filtrado = "SELECT * FROM CLIENTE WHERE TRUE";
 
     $nombre = !empty($_POST['nombre']) ?? $_POST['nombre'];
-    $apellido1 = !empty($_POST['apellido1']) ?? $_POST['apellido1'];
-    $apellido2 = !empty($_POST['apellido2']) ?? $_POST['apellido2'];
+    $apellido1 = !empty($_POST['apellido_1']) ?? $_POST['apellido_1'];
+    $apellido2 = !empty($_POST['apellido_2']) ?? $_POST['apellido_2'];
     $dni = !empty($_POST['dni']) ?? $_POST['dni'];
     $correo = !empty($_POST['correo']) ?? $_POST['correo'];
     $direccion = !empty($_POST['direccion']) ?? $_POST['direccion'];
@@ -52,17 +52,17 @@
     
     if(!empty($nombre)){
         $sql_filtrado .= " AND nombre like :nombre";
-        $arrayValues_cliente[':nombre'] = "%".$_POST['nombre']."%";
+        $arrayValues_cliente['nombre'] = "%".$_POST['nombre']."%";
     }
     
     if(!empty($apellido1)){
-        $sql_filtrado .= " AND apellido1 LIKE :apellido1";
-        $arrayValues_cliente[':apellido1'] = "%".$_POST['apellido1']."%";
+        $sql_filtrado .= " AND apellido_1 LIKE :apellido1";
+        $arrayValues_cliente[':apellido1'] = "%".$_POST['apellido_1']."%";
     }
     
     if(!empty($apellido2)){
-        $sql_filtrado .= " AND apellido2 LIKE :apellido2";
-        $arrayValues_cliente[':apellido2'] = "%".$_POST['apellido2']."%";
+        $sql_filtrado .= " AND apellido_2 LIKE :apellido2";
+        $arrayValues_cliente[':apellido2'] = "%".$_POST['apellido_2']."%";
     }
     
     if(!empty($dni)){
