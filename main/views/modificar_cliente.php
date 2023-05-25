@@ -30,43 +30,43 @@ else{
                 <label for="nombre">
                     Nombre:
                 </label>
-            <input type="text" name="nombre" value=<?php echo "".$cliente['nombre']."";?>>
+            <input class="inputModificarCliente" type="text" name="nombre" value=<?php echo "".$cliente['nombre']."";?>>
             </div>
             <div>
                 <label for="apellido1">
                     Primer apellido:
                 </label>
-            <input type="text" name="apellido1" value=<?php echo "".$cliente['apellido_1']."";?>>
+            <input class="inputModificarCliente" type="text" name="apellido1" value=<?php echo "".$cliente['apellido_1']."";?>>
             </div>
             <div>
                 <label for="apellido2">
                     Segundo apellido:
                 </label>
-            <input type="text" name="apellido2" value=<?php echo "".$cliente['apellido_2']."";?>>
+            <input class="inputModificarCliente" type="text" name="apellido2" value=<?php echo "".$cliente['apellido_2']."";?>>
             </div>
             <div>
                 <label for="email">
                     Email:
                 </label>
-            <input type="text" name="email" value=<?php echo "".$cliente['correo']."";?>>
+            <input class="inputModificarCliente" type="text" name="email" value=<?php echo "".$cliente['correo']."";?>>
             </div>
             <div>
                 <label for="direccion">
                     Direccion:
                 </label>
-                <input type="text" name="direccion" value=<?php echo "".$cliente['direccion']."";?>>
+                <input class="inputModificarCliente" type="text" name="direccion" value=<?php echo "".$cliente['direccion']."";?>>
             </div>
             <div>
                 <label for="localidad">
                     Localidad:
                 </label>
-                <input type="text" name="localidad" value=<?php echo "".$cliente['localidad']."";?>>
+                <input class="inputModificarCliente" type="text" name="localidad" value=<?php echo "".$cliente['localidad']."";?>>
             </div>
             <div>
                 <label for="telefono">
                     Telefono:
                 </label>
-                <input type="text" name="telefono" value=<?php echo "".$cliente['telefono']."";?>>
+                <input class="inputModificarCliente" type="text" name="telefono" value=<?php echo "".$cliente['telefono']."";?>>
             </div>
         </form>
     </main>
