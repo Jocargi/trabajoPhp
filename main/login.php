@@ -20,7 +20,7 @@
                     <input type="password" id="password" class="input-login" name="password" placeholder="Contraseña" />
                     <input type="submit" name="enviar" class="submit" value="INICIAR SESION">
                     <?php
-                    include "conexion.php";
+                    include "dbaccess.php";
                     include "loginLogica.php";
                     ?>
                     <div class="no-registrado">
