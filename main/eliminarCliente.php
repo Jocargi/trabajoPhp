@@ -1,6 +1,6 @@
 <?php 
 
-    require_once "conexion.php";
+    require_once "dbaccess.php";
     require_once "auth_inc.php";
 
     $sql_delete = "DELETE FROM CLIENTE WHERE correo = :correo";

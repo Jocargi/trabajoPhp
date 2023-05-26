@@ -1,6 +1,6 @@
 <?php
 
-require_once "conexion.php";
+require_once "dbaccess.php";
 
 $registrarme_pressed = isset($_POST['registrarme']);
 if($registrarme_pressed){

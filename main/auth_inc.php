@@ -5,7 +5,6 @@ if (empty($_SESSION["correo"])){
     exit();
 }
 
-/**require (__DIR__)."/auth.inc.php");*/
 ?>
 
 
