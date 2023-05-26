@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,7 +33,7 @@
             <img src="images/16468231897426.jpg" alt="" id="img1">
             <div class="formulario">
                 <span>HAZ TU RESERVA YA</span>
-                <form action="index.html" method="post">
+                <form action="index.php" method="post">
                     <label for="numero-personas">Personas</label>
                     <input type="number" name="numero-personas" id="numero-personas" required>
                     <label for="fecha-entrada">Fecha entrada</label>
@@ -48,11 +45,6 @@
                 </form>
             </div>
         </div>
-
-
-       
-
-   
 
     <footer>
       <section id="f1">
