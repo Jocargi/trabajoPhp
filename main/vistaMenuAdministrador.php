@@ -61,7 +61,7 @@
             </div>
             
             <input type="submit" name="filtrar" value="FILTRAR">
-            <input type="reset" name="limpiar" value="LIMPIAR">
+            <input type="reset" name="limpiar" value="LIMPIAR" >
 
     </div>
     <div class="tabla-container">

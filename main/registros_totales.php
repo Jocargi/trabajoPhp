@@ -6,9 +6,9 @@
 
    if(!empty($nombre)) $sql_count.= " AND nombre like :nombre";
    
-   if(!empty($apellido1)) $sql_count.= " AND apellido_1 LIKE :apellido1";
+   if(!empty($apellido1)) $sql_count.= " AND apellido_1 LIKE :apellido_1";
    
-   if(!empty($apellido2)) $sql_count.= " AND apellido_2 LIKE :apellido2";
+   if(!empty($apellido2)) $sql_count.= " AND apellido_2 LIKE :apellido_2";
    
    if(!empty($dni)) $sql_count.= " AND dni LIKE :dni";
    
