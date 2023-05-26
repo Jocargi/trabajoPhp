@@ -18,11 +18,11 @@
 		<input type=”text” name=”apellido2”>
 		<label for=”correo”>Correo</label>
 		<input type=”email” name=”correo”>
-		<label for=”direccion”>DNI</label>
+		<label for=”direccion”>Dirección</label>
 		<input type=”text” name=”direccion”>
-		<label for=”telefono”>DNI</label>
+		<label for=”telefono”>Telefono</label>
 		<input type=”tel” name=”telefono”>
-		<label for=”codigo_acceso”>DNI</label>
+		<label for=”codigo_acceso”>Código acceso</label>
 		<input type=”text” name=”codigo_acceso”>
 
 
