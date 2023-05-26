@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="menu_clientes.css">
 </head>
 <body>
+    <?php
+    require_once("auth_inc.php");
+    ?>
     <h1>Menu de clientes</h1>
     <section>
         <a href="" id="enlace">Haga sus reservas</a>
