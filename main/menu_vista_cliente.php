@@ -26,7 +26,7 @@ $_GET['dni'] = "1";
         echo '<th>Direccion</th>';
         echo '<th>Localidad</th>';
         echo '<th>Teléfono</th>';
-        echo '<th>Código de accesp</th>';
+        echo '<th>Código de acceso</th>';
         echo '</thead>';
         echo"<tr>";
         echo "<td>".$row['dni']."</td>";
