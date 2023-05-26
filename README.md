@@ -6,15 +6,3 @@
  **ROJO**: PAGINA WEB VISTA  
  **AZULES**: RESERVAS  
  **VERDE**: LOGIN  
- 
-
- 
-=======
-# trabajoPhp
-
-### Colores
-** Amarillo: CLIENTES
-** ROJO: Pagina Principal
-** VERDE: LOGIN
-** AZUL: RESERVAS
->>>>>>> eliminarCliente
