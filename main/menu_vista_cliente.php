@@ -7,24 +7,27 @@
 </head>
 <body>
 	<h1>Datos del cliente</h1>
-	<form method=”post” action=”menu_vista_cliente.php”>
-		<label for=”dni”>DNI</label>
-		<input type=”text” name=”dni”>
-<label for=”nombre”>Nombre</label>
-		<input type=”text” name=”nombre”>
-		<label for=”apellido1”>Apellido 1</label>
-		<input type=”text” name=”apellido1”>
-		<label for=”apellido2”>Apellido 2</label>
-		<input type=”text” name=”apellido2”>
-		<label for=”correo”>Correo</label>
-		<input type=”email” name=”correo”>
-		<label for=”direccion”>Dirección</label>
-		<input type=”text” name=”direccion”>
-		<label for=”telefono”>Telefono</label>
-		<input type=”tel” name=”telefono”>
-		<label for=”codigo_acceso”>Código acceso</label>
-		<input type=”text” name=”codigo_acceso”>
-
+<?php
+   require_once("dbaccess.php");
+   $sql= "select * from cliente where true ";
+   $id_cliente = "10";
+   $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
+   $stmt->execute(array(':id'=>$id_cliente));
+   $row = $stmt->fetch();
+        echo "<table border='1px solid'>";
+        echo"<tr>";
+        echo "<td>".$row['dni']."</td>";
+        echo "<td>".$row['email']."</td>";
+        echo "<td>".$row['nombre']."</td>";
+        echo "<td>".$row['apellido_1']."</td>";
+        echo "<td>".$row['apellido_2']."</td>";
+        echo "<td>".$row['direccion']."</td>";
+        echo "<td>".$row['localidad']."</td>";
+        echo "<td>".$row['telefono']."</td>";
+        echo "<td>".$row['codigo_acceso']."</td>";
+        echo"</tr>";
+        echo "</table>";
+?>
 
 
 	</form>
