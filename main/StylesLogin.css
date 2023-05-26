@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   gap: 2em;
-  background-color: rgba(88, 31, 31, 0.907);
+  background-color: rgba(31, 55, 88, 0.907);
   border-radius: 0.75rem;
 }
 
@@ -54,7 +54,7 @@ form{
 }
 
 .input-login:focus{
-  border-color: brown;
+  border-color: rgb(42, 89, 165);
 }
 
 ::placeholder {
@@ -68,7 +68,7 @@ form{
 
 .submit {
   display: block;
-  background-color: rgb(98, 15, 24);
+  background-color: rgb(15, 98, 65);
   padding: 0.75rem;
   text-align: center;
   color: rgb(225, 226, 228);
@@ -81,7 +81,8 @@ form{
 }
 
 .submit:hover{
-  background-color: #06b;
+  background-color: rgb(0, 187, 93);
+  color: rgb(52, 52, 52);
 }
 
 .submit:active {

@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarifa Dreams</title>
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="stylesMain.css" type="text/css">
 </head>
 <body>
     <header>
         <div class="parte-superior">
             <div class="parte-superior-izquierda">
-                <a href="index.html">Tarifa Dreams</a>
+                <a href="index.php">Tarifa Dreams</a>
             </div>
-            <a href="index.html"><img src="images/si.png" alt="logo"></a>
+            <a href="login.php"><img src="images/si.png" alt="logo"></a>
             <div class="parte-superior-derecha">
             </div>
         </div>

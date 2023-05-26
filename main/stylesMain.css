@@ -7,9 +7,11 @@ body{
   background: linear-gradient(to top,#36c9f7,#0cb7f2);
 }
 
+
+
 header{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .parte-superior{
@@ -27,10 +29,9 @@ header{
 }
 
 .parte-superior-izquierda a {
-  text-decoration: none;
-  color: aliceblue;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 24px;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .parte-superior-derecha{
@@ -120,4 +121,3 @@ footer {
 #f1{
     color: white;
 }
-
