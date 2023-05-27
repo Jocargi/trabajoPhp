@@ -7,7 +7,6 @@
 </head>
 <body>
 <?php
-$_GET['dni'] = "1";
     if(isset($_GET['dni']) && !empty($_GET['dni'])) {
         require_once("dbaccess.php");
         $sql= "select * from cliente where true ";
