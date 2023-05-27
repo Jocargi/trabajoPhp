@@ -19,7 +19,9 @@ nombre ENUM("Individual", "Doble", "Triple") NOT NULL,
 numero_camas TINYINT UNSIGNED NOT NULL,
 max_personas TINYINT UNSIGNED NOT NULL,
 precio TINYINT UNSIGNED NOT NULL,
-descripcion TEXT NULL
+descripcion TEXT NULL,
+id_reserva SMALLINT UNSIGNED not null,
+CONSTRAINT FK_habitacion_reserva FOREIGN KEY (id_reserva) REFERENCES reserva(id) ON UPDATE CASCADE ON DELETE RESTRICT
 ) ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS reserva (
@@ -28,8 +30,7 @@ id_cliente CHAR(9)NOT NULL,
 id_habitacion SMALLINT UNSIGNED NOT NULL,
 fecha_entrada DATE NOT NULL,
 fecha_salida DATE NOT NULL,
-CONSTRAINT FK_reserva_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(dni) ON UPDATE CASCADE ON DELETE RESTRICT,
-CONSTRAINT FK_reserva_habitacion FOREIGN KEY (id_habitacion) REFERENCES habitacion(id) ON UPDATE CASCADE ON DELETE RESTRICT
+CONSTRAINT FK_reserva_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(dni) ON UPDATE CASCADE ON DELETE RESTRICT
 ) ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS usuario(
