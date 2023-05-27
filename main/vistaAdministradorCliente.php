@@ -7,14 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Administrador</title>
-    <link rel="stylesheet" href="menuAdministrador.css" type="text/css">
+    <link rel="stylesheet" href="stylesMenuAdministrador.css" type="text/css">
     <script src="prueba.js" type="text/javascript"></script>
 </head>
 <body>
+<h1>CLIENTES</h1>
     <header>
         <div class="name-banner">
             <button name="logout" onclick="location.href='cerrar_sesion.php'"><?php
-            echo $_SESSION['correo'] ?> <img src='images/eye-svgrepo-com (1).svg' alt=''>
+            echo $_SESSION['correo'] ?>
             </button>
         </div>
         <nav>
@@ -29,7 +30,7 @@
 <main>
 
     <div class="form-container">
-        <form action="vistaMenuAdministrador.php" method="Post">
+        <form action="vistaMenuAdministradorCliente.php" method="Post">
 
             <div class="gr1">
                 <label for="nombre">Nombre: </label>
@@ -66,12 +67,12 @@
     </div>
     <div class="tabla-container">
             <table class="table">
-                <?php include "logicaMenuAdministrador.php"?>
+                <?php include "logicaMenuAdministradorCliente.php"?>
             </table>
     </div>
 
     <div class="paginador">
-        <?php include "registros_totales.php"; ?>
+        <?php include "registros_totales_cliente.php"; ?>
         <input type="submit" name="primera_pagina" value="&lt;&lt;" <?php echo $btn_primera_pagina; ?> >
         <input type="submit" name="anterior" value="&lt;">
         <input type="number" name="pagina" value="<?php echo $pagina; ?>">

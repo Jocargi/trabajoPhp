@@ -7,18 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Administrador Cliente</title>
-    <link rel="stylesheet" href="menuAdministrador.css" type="text/css">
+    <link rel="stylesheet" href="stylesMenuAdministrador.css" type="text/css">
     <script src="prueba.js" type="text/javascript"></script>
 </head>
 <body>
 
-    <h1>FILTRADO DE RESERVAS</h1>
+    <h1>RESERVAS</h1>
 
     <header>
         <div class="name-banner">
-            <button name="logout" onclick="location.href='cerrar_sesion.php'"><?php
-            echo $_SESSION['correo'] ?> <img src='images/eye-svgrepo-com (1).svg' alt=''>
-            </button>
+            <button name="logout" onclick="location.href='cerrar_sesion.php'"><?php echo $_SESSION['correo'] ?> </button>
         </div>
         <nav>
             <ul>
@@ -35,18 +33,18 @@
         <form action="vistaAdministradorReserva.php" method="Post">
 
             <div class="gr1">
-                <label for="id">id: </label>
+                <label for="id">ID RESERVA: </label>
                 <input type="text" name="id" placeholder="..." value="<?php if (isset($_POST['id'])) echo $_POST['id']; ?>">
-                <label for="id_cliente">id_cliente:</label>
+                <label for="id_cliente">DNI CLIENTE:</label>
                 <input type="text" name="id_cliente" placeholder="..." value="<?php if (isset($_POST['id_cliente'])) echo $_POST['id_cliente']; ?>">
-                <label for="id_habitacion">id_habitacion: </label>
+                <label for="id_habitacion">Nº HABITACION: </label>
                 <input type="text" name="id_habitacion" placeholder="..." value="<?php if (isset($_POST['id_habitacion'])) echo $_POST['id_habitacion']; ?>">
             </div>
             
             <div class="gr2">
-                <label for="fecha_entrada">Fecha entrada:</label>
+                <label for="fecha_entrada">FECHA ENTRADA:</label>
                 <input type="text" name="fecha_entrada" placeholder="..." value="<?php if (isset($_POST['fecha_entrada'])) echo $_POST['fecha_entrada']; ?>">
-                <label for="fecha_salida">Fecha salida:</label>
+                <label for="fecha_salida">FECHA SALIDA:</label>
                 <input type="text" name="fecha_salida" placeholder="..." value="<?php if (isset($_POST['fecha_salida'])) echo $_POST['fecha_salida']; ?>">
             </div>
             
