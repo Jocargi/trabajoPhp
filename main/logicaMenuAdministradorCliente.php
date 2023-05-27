@@ -15,7 +15,7 @@ $campos = [
 
     $pagina = (isset($_POST['pagina'])) ? (int) $_POST['pagina'] : 1;
     
-    $registrosPagina = isset($_POST['registros_pagina']) ? (int) $_POST['registros_pagina'] : 2;
+    $registrosPagina = isset($_POST['registros_pagina']) ? (int) $_POST['registros_pagina'] : 4;
 
     $selected1 = (int)$registrosPagina  == 2 ? "selected" : "none";
     $selected2 = (int)$registrosPagina  == 4 ? "selected" : "none";
