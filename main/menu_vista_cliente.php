@@ -3,7 +3,7 @@
 <head>
 	<meta charset=”UTF-8”>
 	<title>Datos del cliente</title>
-    <link rel="stylesheet" href="menu_vista_cliente.css">
+    <link rel="stylesheet" href="styles_Menu_vista_cliente.css">
 </head>
 <body>
 <?php

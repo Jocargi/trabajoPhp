@@ -8,7 +8,7 @@ $enviar_pressed = isset($_POST["enviar"]);
 
 if($enviar_pressed){
 
-$sql = "SELECT correo, contrasena, rol FROM usuario WHERE correo LIKE :email AND contrasena LIKE :password";
+$sql = "SELECT correo, contrasena, rol, id_cliente FROM usuario WHERE correo LIKE :email AND contrasena LIKE :password";
 
 $array_values=[];
 $resultado=[];
@@ -27,12 +27,12 @@ if(!empty($resultado)){
     header("Location: login.php");
 }
 
-$_SESSION['correo'] = $email;
-
 if(($resultado['rol'])){
+    $_SESSION['correo'] = $resultado['correo'];
     header("Location: vistaMenuAdministrador.php");
 } else{
-    header("Location: viewMenuCliente.php"); 
+    $_SESSION['id'] = $resultado['id_cliente'];
+    header("Location: menu_clientes.php"); 
 }
 
 }
