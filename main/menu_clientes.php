@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu_clientes</title>
-    <link rel="stylesheet" href="menu_clientes.css">
+    <link rel="stylesheet" href="styles_Menu_clientes.css">
 </head>
 <body>
     <h1>Menu de clientes</h1>

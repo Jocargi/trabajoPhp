@@ -32,7 +32,7 @@ $_SESSION['correo'] = $email;
 if(($resultado['rol'])){
     header("Location: vistaMenuAdministrador.php");
 } else{
-    header("Location: viewMenuCliente.php"); 
+    header("Location: menu_clientes.html"); 
 }
 
 }
