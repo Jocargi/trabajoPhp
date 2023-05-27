@@ -2,7 +2,10 @@
 require_once('auth_inc.php');
 require_once('dbaccess.php');
 
-$sql = "SELECT * FROM reserva r JOIN usuario u on c.correo=";
+$correo = $_SESSION['correo'];
+$sql = "SELECT * FROM reserva r JOIN cliente c on c.dni = r.id_cliente where c.correo='$correo'";
+
+$pdo->execute($sql);
 ?>
 
 <!DOCTYPE html>
