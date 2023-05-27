@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="menu_clientes.css">
 </head>
 <body>
+    <?php
+    require_once("auth_inc.php");
+    ?>
     <h1>Menu de clientes</h1>
     <section>
-        <a href="" id="enlace">Haga sus reservas</a>
-        <a href=""id="enlace">Mis reservas</a>
-        <a href=""id="enlace">Mis Datos</a>
+        <a href="" id="enlace1">Mis reservas</a>
+        <a href=""id="enlace2">Haga sus reservas</a>
+        <a href=""id="enlace3">Mis Datos</a>
     </section>
 </body>
 </html>
