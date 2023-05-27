@@ -10,8 +10,7 @@ apellido_2 VARCHAR(30) NULL,
 correo VARCHAR(50) NOT NULL UNIQUE,
 direccion VARCHAR(60) NULL,
 localidad VARCHAR(25) NULL,
-telefono CHAR(13) NULL,
-codigo_acceso CHAR(7) NOT NULL
+telefono CHAR(13) NULL
 ) ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS habitacion(
