@@ -1,3 +1,10 @@
+<?php
+require_once('auth_inc.php');
+require_once('dbaccess.php');
+
+$sql = "SELECT * FROM reserva r JOIN usuario u on c.correo=";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
