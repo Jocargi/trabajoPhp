@@ -1,0 +1,29 @@
+body{
+    background-color: RGBA(97,92,92,0.37);
+}
+
+h1{
+    text-align: center;
+    align-items: center;
+    background-color: rgba(11, 6, 56, 0.801);
+    color: aliceblue;
+    height: 50px;
+}
+
+td{
+    border: 0px;
+    background-color:antiquewhite;
+    width: 10%;
+    text-align: center;
+}
+div{
+    margin-top: 2%;
+    width: 80px;
+    padding: 25px;
+    background-color: rgba(11, 6, 56, 0.801);
+    text-align: center;
+}
+
+.enlace{
+    color: white;
+}
