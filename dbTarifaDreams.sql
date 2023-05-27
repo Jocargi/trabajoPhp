@@ -7,13 +7,6 @@ dni CHAR(9) PRIMARY KEY,
 nombre VARCHAR(30) NULL,
 apellido_1 VARCHAR(30) NULL,
 apellido_2 VARCHAR(30) NULL,
-CREATE DATABASE tarifadreams CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-CREATE TABLE IF NOT EXISTS cliente(
-dni CHAR(9) PRIMARY KEY,
-nombre VARCHAR(30) NULL,
-apellido_1 VARCHAR(30) NULL,
-apellido_2 VARCHAR(30) NULL,
 correo VARCHAR(50) NOT NULL,
 direccion VARCHAR(60) NULL,
 localidad VARCHAR(25) NULL,
