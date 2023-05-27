@@ -30,7 +30,7 @@
 <main>
 
     <div class="form-container">
-        <form action="vistaMenuAdministradorCliente.php" method="Post">
+        <form action="vistaAdministradorCliente.php" method="Post">
 
             <div class="gr1">
                 <label for="nombre">Nombre: </label>
