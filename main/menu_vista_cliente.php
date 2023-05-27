@@ -42,6 +42,11 @@ $_GET['dni'] = "1";
         echo "</table>";
     }
     ?>
+        <a class="enlace"  href="index.php">
+            <div>
+                <h3>Volver</h3>
+            </div>
+        </a>
 </body>
 </html>
 
