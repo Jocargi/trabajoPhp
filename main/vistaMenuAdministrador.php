@@ -11,7 +11,10 @@
 </head>
 <body>
     <header>
-        <h1>Menu de Administrador</h1>
+    <h1>Menu de Administrador</h1>
+    <div class="name-banner">
+            <button name="logout" onclick="location.href='cerrar_sesion.php'"><?php echo $_SESSION['correo'] ?> </button>
+        </div>
     </header>
     <section>
         <a href="vistaAdministradorCliente.php" id="enlace">CLIENTES</a>

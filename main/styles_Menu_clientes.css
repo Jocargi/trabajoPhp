@@ -4,11 +4,31 @@
 }
 
 header{
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  background-color: rgba(11,6,56,0.801);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(11, 6, 56, 0.801);
+  color: aliceblue;
+  height: 50px;
 }
+
+
+header button{
+  background-color: rgb(66, 137, 15);
+  color: aliceblue;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5%;
+  transition: 150ms;
+  margin-right: 5px;
+}
+
+header button:hover{
+  padding: 7px;
+  position: relative;
+  font-size: 20px;
+}
+
 
 h1{
    text-align: center;
