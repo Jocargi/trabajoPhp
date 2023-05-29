@@ -65,7 +65,7 @@
     </div>
     <div class="tabla-container">
             <table class="table">
-                <?php include "logicaMenuAdministradorCliente.php"?>
+                <?php include "logicaAdministradorCliente.php"?>
             </table>
     </div>
 

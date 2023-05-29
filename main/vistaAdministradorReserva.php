@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Administrador Cliente</title>
+    <title>Menu Administrador Reservas</title>
     <link rel="stylesheet" href="stylesMenuAdministrador.css" type="text/css">
-    <script src="prueba.js" type="text/javascript"></script>
+    <script src="eliminarReserva.js" type="text/javascript"></script>
 </head>
 <body>
 

@@ -1,5 +1,5 @@
-function eliminarReserva(id) {
-    var confirmar = confirm("¿Estás seguro de que deseas eliminar la reserva con id: " + id + "?");
+function eliminarReserva(idReserva) {
+    var confirmar = confirm("¿Estás seguro de que deseas eliminar la reserva con id: " + idReserva + "?");
     if (confirmar) {
         var form = document.createElement("form");
         form.setAttribute("method", "post");
@@ -7,8 +7,8 @@ function eliminarReserva(id) {
 
         var input = document.createElement("input");
         input.setAttribute("type", "hidden");
-        input.setAttribute("name", "id");
-        input.setAttribute("value", id);
+        input.setAttribute("name", "id_eliminarReserva");
+        input.setAttribute("value", idReserva);
 
         form.appendChild(input);
         document.body.appendChild(form);

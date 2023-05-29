@@ -4,7 +4,7 @@
 
     $sql_count = "SELECT COUNT(id) as total_registros FROM HABITACION WHERE TRUE";
 
-   if(!empty($id)) $sql_count.= " AND id like :id";
+   if(!empty($_POST['id'])) $sql_count.= " AND id like :id";
    
    if(!empty($nombre)) $sql_count.= " AND nombre LIKE :nombre";
    

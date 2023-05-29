@@ -93,7 +93,7 @@ $campos = [
 
     while($resultado = $stmt -> fetch()){
 
-        $id = $resultado['id']; 
+        $idEliminar = $resultado['id']; 
 
         echo "<tr>";
         echo "<td>".$resultado["id"]."</td>";
@@ -103,7 +103,7 @@ $campos = [
         echo "<td>".$resultado["precio"]."</td>";
         echo "<td>".$resultado["descripcion"]."</td>";
         echo "<td>"."<input type='submit' name='modificar' id='btn_modificar' value='MODIFICAR'>" . "</td>"; 
-        echo "<td>"."<input type='button' name='$id' id='btn_eliminar' value='ELIMINAR' onclick= eliminarHabitacion('$id') >". "</td>";
+        echo "<td>"."<input type='button' name='$idEliminar' id='btn_eliminar' value='ELIMINAR' onclick= eliminarHabitacion('$idEliminar') >". "</td>";
         echo "</tr>";
     }
 ?>

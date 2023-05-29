@@ -2,19 +2,19 @@
     
     print_r($arrayValues_reserva);
 
-    $sql_count = "SELECT COUNT(*) as total_registros FROM RESERVA WHERE TRUE";
+    $sql_countR = "SELECT COUNT(*) as total_registros FROM RESERVA WHERE TRUE";
 
-   if(!empty($id)) $sql_count.= " AND id like :id";
+   if(!empty($_POST['id'])) $sql_countR.= " AND id like :id";
    
-   if(!empty($id_cliente)) $sql_count.= " AND id_cliente LIKE :id_cliente";
+   if(!empty($id_cliente)) $sql_countR.= " AND id_cliente LIKE :id_cliente";
    
-   if(!empty($id_habitacion)) $sql_count.= " AND id_habitacion LIKE :id_habitacion";
+   if(!empty($id_habitacion)) $sql_countR.= " AND id_habitacion LIKE :id_habitacion";
    
-   if(!empty($fecha_entrada)) $sql_count.= " AND fecha_entrada LIKE :fecha_entrada";
+   if(!empty($fecha_entrada)) $sql_countR.= " AND fecha_entrada LIKE :fecha_entrada";
    
-   if(!empty($fecha_salida)) $sql_count.= " AND fecha_salida LIKE :fecha_salida";
+   if(!empty($fecha_salida)) $sql_countR.= " AND fecha_salida LIKE :fecha_salida";
 
-   $stmt = $pdo->prepare($sql_count);
+   $stmt = $pdo->prepare($sql_countR);
    $stmt -> execute($arrayValues_reserva);
    
    $total_registros = $stmt->fetch(PDO::FETCH_ASSOC);

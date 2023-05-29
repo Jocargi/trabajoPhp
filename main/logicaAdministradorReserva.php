@@ -85,7 +85,7 @@ $campos = [
 
     while($resultado = $stmt -> fetch()){
 
-        $id = $resultado['id']; 
+        $idReserva = $resultado['id']; 
 
         echo "<tr>";
         echo "<td>".$resultado["id"]."</td>";
@@ -94,7 +94,7 @@ $campos = [
         echo "<td>".$resultado["fecha_entrada"]."</td>";
         echo "<td>".$resultado["fecha_salida"]."</td>";
         echo "<td>"."<input type='submit' name='modificar' id='btn_modificar' value='MODIFICAR'>" . "</td>"; 
-        echo "<td>"."<input type='button' name='$id' id='btn_eliminar' value='ELIMINAR' onclick= eliminarReserva('$id') >". "</td>";
+        echo "<td>"."<input type='button' name='$idReserva' id='btn_eliminar' value='ELIMINAR' onclick= eliminarReserva('$idReserva') >". "</td>";
         echo "</tr>";
     }
 ?>

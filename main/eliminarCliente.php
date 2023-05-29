@@ -11,7 +11,7 @@
     $resultado = $stmt->execute($arrayValues_cliente);
 
     if($resultado){
-        header("Location: vistaMenuAdministradorCliente.php");
+        header("Location: vistaAdministradorCliente.php");
     }
 
 ?>
