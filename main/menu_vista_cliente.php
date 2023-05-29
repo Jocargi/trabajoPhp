@@ -3,11 +3,10 @@
 <head>
 	<meta charset=”UTF-8”>
 	<title>Datos del cliente</title>
-    <link rel="stylesheet" href="menu_vista_cliente.css">
+    <link rel="stylesheet" href="styles_Menu_vista_cliente.css">
 </head>
 <body>
 <?php
-$_GET['dni'] = "1";
     if(isset($_GET['dni']) && !empty($_GET['dni'])) {
         require_once("dbaccess.php");
         $sql= "select * from cliente where true ";
