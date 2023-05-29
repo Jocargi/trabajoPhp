@@ -1,6 +1,8 @@
 <?php
 require_once('dbaccess.php');
 $_GET['id'] = 123456789;
+$dni = $_GET['id'];
+$usuarioActualizado=false;
 if(isset($_GET['id']) && !empty($_GET['id'])) {
     $id_cliente = 123456789;
     $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
@@ -13,7 +15,16 @@ else{
 
 //Comprueba si se ha enviado la petición de modificar el cliente
 if(isset($_POST) && !empty($_POST)){
-    $sql = "UPDATE cliente SET nombre=:nombre, apellido1=:apellido1,email=:email WHERE dni=:id";
+    $usuarioActualizado = true;
+    $sql = "UPDATE cliente SET nombre=:nombre, apellido1=:apellido_1, apellido2=:apellido_2,email=:email, direccion=:direccion, localidad=:localidad, telefono=:telefono WHERE dni=:id";
+    $stmt -> prepare($sql);
+    $nombre = $_POST['nombre'];
+    $apellido1 = $_POST['apellido1'];
+    $apellido2 = $_POST['apellido2'];
+    $email = $_POST['email'];
+    $direccion = $_POST['direccion'];
+    $localidad = $_POST['localidad'];
+    $stmt->execute(array(':dni'=>$dni, ':nombre'=>$id_cliente, ':apellido1'=>$apellido1, ':apellido2'=>$apellido2, ':email'=>$email, ':direccion'=>$direccion, ':localidad'=>$localidad));
 }
 ?>
 <!DOCTYPE html>
@@ -22,13 +33,21 @@ if(isset($_POST) && !empty($_POST)){
     <meta charset="UTF-8">
     <title>Modificar Cliente</title>
     <link rel="stylesheet" href="stylesRegistro.css">
+    <link rel="stylesheet" href="styles_Menu_clientes.css">
+    <script src=""></script>p
 </head>
 <body>
-    <header id="header_modificar_cliente">
+    <header>
         <h1>Modificar cliente: <?php echo $cliente['nombre']; ?></h1>
     </header>
     <main id="main_modificar_cliente">
         <form action="modificar_cliente.php" method="post">
+            <div>
+                <label for="dni">
+                    DNI:
+                </label>
+            <input type="text" name="dni" value=<?php echo "".$cliente['dni']."";?> readonly>
+            </div>
             <div>
                 <label for="nombre">
                     Nombre:
@@ -73,6 +92,7 @@ if(isset($_POST) && !empty($_POST)){
             </div>
             <input type="submit" value="Modificar">
         </form>
+        <div style="<?php echo $usuarioActualizado ? "" : "display=none".";" ?>" id="mensajeClienteModificado"><h3>¡Cliente modificado!</h3></div>
     </main>
 </body>
 </html>
