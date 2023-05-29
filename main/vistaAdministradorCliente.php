@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Administrador</title>
     <link rel="stylesheet" href="stylesMenuAdministrador.css" type="text/css">
-    <script src="prueba.js" type="text/javascript"></script>
+    <script src="eliminarCliente.js" type="text/javascript"></script>
 </head>
 <body>
 <h1>CLIENTES</h1>
@@ -20,9 +20,7 @@
         </div>
         <nav>
             <ul>
-                <a href=""><li>Clientes</li></a>
-                <a href=""><li>Reservas</li></a>
-                <a href=""><li>Habitaciones</li></a>
+                <a href="vistaMenuAdministrador.php"><li>Volver al menu</li></a>
             </ul>
         </nav>
     </header>

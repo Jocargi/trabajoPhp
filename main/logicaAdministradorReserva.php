@@ -64,7 +64,7 @@ $campos = [
         $arrayValues_reserva[':fecha_salida'] = "%".$_POST['fecha_salida']."%";
     }
 
-    $limit = isset($_POST['registros-pagina']) ? (int) $_POST['registros-pagina']:2;
+    $limit = isset($_POST['registros-pagina']) ? (int) $_POST['registros-pagina']:4;
 
     $empieza_desde = ($pagina-1)*$registrosPagina;
 
@@ -85,7 +85,7 @@ $campos = [
 
     while($resultado = $stmt -> fetch()){
 
-        $correoEliminacion = $resultado['id']; 
+        $id = $resultado['id']; 
 
         echo "<tr>";
         echo "<td>".$resultado["id"]."</td>";
@@ -94,7 +94,7 @@ $campos = [
         echo "<td>".$resultado["fecha_entrada"]."</td>";
         echo "<td>".$resultado["fecha_salida"]."</td>";
         echo "<td>"."<input type='submit' name='modificar' id='btn_modificar' value='MODIFICAR'>" . "</td>"; 
-        echo "<td>"."<input type='button' name='$correoEliminacion' id='btn_eliminar' value='ELIMINAR' onclick= eliminarCliente('$correoEliminacion') >". "</td>";
+        echo "<td>"."<input type='button' name='$id' id='btn_eliminar' value='ELIMINAR' onclick= eliminarReserva('$id') >". "</td>";
         echo "</tr>";
     }
 ?>

@@ -19,7 +19,7 @@
     <section>
         <a href="vistaAdministradorCliente.php" id="enlace">CLIENTES</a>
         <a href="vistaAdministradorReserva.php"id="enlace">RESERVAS</a>
-        <a href=""id="enlace">HABITACIONES</a>
+        <a href="vistaAdministradorHabitacion.php"id="enlace">HABITACIONES</a>
     </section>
 </body>
 </html>

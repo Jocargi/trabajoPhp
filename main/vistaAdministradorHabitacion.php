@@ -8,12 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Administrador Cliente</title>
     <link rel="stylesheet" href="stylesMenuAdministrador.css" type="text/css">
-    <script src="prueba.js" type="text/javascript"></script>
+    <script src="eliminarHabitacion.js" type="text/javascript"></script>
 </head>
 <body>
 
-    <h1>RESERVAS</h1>
-
+    <h1>HABITACIONES</h1>
     <header>
         <div class="name-banner">
             <button name="logout" onclick="location.href='cerrar_sesion.php'"><?php echo $_SESSION['correo'] ?> </button>
@@ -28,25 +27,27 @@
 <main>
 
     <div class="form-container">
-        <form action="vistaAdministradorReserva.php" method="Post">
+        <form action="vistaAdministradorHabitacion.php" method="Post">
 
             <div class="gr1">
-                <label for="id">ID RESERVA: </label>
+                <label for="id">ID: </label>
                 <input type="text" name="id" placeholder="..." value="<?php if (isset($_POST['id'])) echo $_POST['id']; ?>">
-                
-                <label for="id_cliente">DNI CLIENTE:</label>
-                <input type="text" name="id_cliente" placeholder="..." value="<?php if (isset($_POST['id_cliente'])) echo $_POST['id_cliente']; ?>">
-                
-                <label for="id_habitacion">Nº HABITACION: </label>
-                <input type="text" name="id_habitacion" placeholder="..." value="<?php if (isset($_POST['id_habitacion'])) echo $_POST['id_habitacion']; ?>">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" placeholder="..." value="<?php if (isset($_POST['nombre'])) echo $_POST['nombre']; ?>">
+                <label for="numero_camas">Nº camas: </label>
+                <input type="text" name="numero_camas" placeholder="..." value="<?php if (isset($_POST['numero_camas'])) echo $_POST['numero_camas']; ?>">
             </div>
             
             <div class="gr2">
-                <label for="fecha_entrada">FECHA ENTRADA:</label>
-                <input type="date" name="fecha_entrada" placeholder="..." value="<?php if (isset($_POST['fecha_entrada'])) echo $_POST['fecha_entrada']; ?>">
-                
-                <label for="fecha_salida">FECHA SALIDA:</label>
-                <input type="date" name="fecha_salida" placeholder="..." value="<?php if (isset($_POST['fecha_salida'])) echo $_POST['fecha_salida']; ?>">
+                <label for="max_personas">Nº de personas:</label>
+                <input type="text" name="max_personas" placeholder="..." value="<?php if (isset($_POST['max_personas'])) echo $_POST['max_personas']; ?>">
+                <label for="precio">Precio:</label>
+                <input type="text" name="precio" placeholder="..." value="<?php if (isset($_POST['precio'])) echo $_POST['precio']; ?>">
+            </div>
+
+            <div class="gr3">
+            <label for="descripcion">Descripcion:</label>
+                <input type="text" name="descripcion" placeholder="..." value="<?php if (isset($_POST['descripcion'])) echo $_POST['descripcion']; ?>">
             </div>
             
             <input type="submit" name="filtrar" value="FILTRAR">
@@ -55,12 +56,12 @@
     </div>
     <div class="tabla-container">
             <table class="table">
-                <?php include "logicaAdministradorReserva.php"?>
+                <?php include "logicaAdministradorHabitacion.php"?>
             </table>
     </div>
 
     <div class="paginador">
-        <?php include "registros_totales_reservas.php"; ?>
+        <?php include "registros_totales_habitaciones.php"; ?>
         <input type="submit" name="primera_pagina" value="&lt;&lt;" <?php echo $btn_primera_pagina; ?> >
         <input type="submit" name="anterior" value="&lt;">
         <input type="number" name="pagina" value="<?php echo $pagina; ?>">

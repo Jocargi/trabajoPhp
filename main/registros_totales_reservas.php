@@ -2,7 +2,7 @@
     
     print_r($arrayValues_reserva);
 
-    $sql_count = "SELECT COUNT(id) as total_registros FROM RESERVA WHERE TRUE";
+    $sql_count = "SELECT COUNT(*) as total_registros FROM RESERVA WHERE TRUE";
 
    if(!empty($id)) $sql_count.= " AND id like :id";
    
