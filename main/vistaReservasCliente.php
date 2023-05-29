@@ -2,10 +2,16 @@
 require_once('auth_inc.php');
 require_once('dbaccess.php');
 
-$correo = $_SESSION['correo'];
-$sql = "SELECT * FROM reserva r JOIN cliente c on c.dni = r.id_cliente where c.correo='$correo'";
+if(empty($_SESSION['correo'])){
+    header("index.php");
+    exit(1);
+}
 
-$pdo->execute($sql);
+$correo = $_SESSION['correo'];
+$sql = "SELECT r.* FROM reserva r JOIN cliente c on c.dni = r.id_cliente 
+                                JOIN habitacion h on h.id_reserva=r.id
+        where c.correo='$correo'";
+$stmt = pdo->execute($sql);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +26,22 @@ $pdo->execute($sql);
         <h1>Mis reservas</h1>
     </header>
     <main>
-        
+        <table>
+            <thead>
+                <th>Entrada</th>
+                <th>Salida</th>
+                <th>Num. Personas</th>
+            </thead>
+        <?php
+        while($reserva = $stmt->fetch(PDO::FETCH_ASSOC)){
+            echo '<tr>';
+            echo '<td>'.$reserva['fecha_entrada'].'</td>';
+            echo '<td>'.$reserva['fecha_salida'].'</td>';
+            echo '<td>'.$reserva['num_personas'].'</td>';
+            echo '</tr>';
+        }        
+        ?>
+        </table>
     </main>
 </body>
 </html>
