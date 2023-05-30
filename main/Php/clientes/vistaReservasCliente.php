@@ -2,10 +2,10 @@
 require_once('auth_inc.php');
 require_once('dbaccess.php');
 
-if(empty($_SESSION['correo'])){
-    header("index.php");
-    exit(1);
-}
+//if(empty($_SESSION['correo'])){
+  //  header("index.php");
+   // exit(1);
+//}
 
 $correo = $_SESSION['correo'];
 $sql = "SELECT r.* FROM reserva r JOIN cliente c on c.dni = r.id_cliente 

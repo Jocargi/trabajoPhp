@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "root";
 $db = "tarifadreams";
 try{
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
