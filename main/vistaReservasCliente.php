@@ -4,18 +4,13 @@ require "auth_inc.php";
 require "dbaccess.php";
 
 $correo = $_SESSION['correo'];
-echo $_SESSION['correo'];
 
 $sql = "SELECT r.* FROM reserva r JOIN cliente c on c.dni = r.id_cliente 
                                 JOIN habitacion h on h.id=r.id_habitacion
         where c.correo like :correo";
 
-$arrayValues = [];
-
-$arrayValues['correo'] = $correo;
-
 $stmt = $pdo->prepare($sql);
-$stmt -> execute($arrayValues);
+$stmt -> execute(array(":correo" => $correo));
 
 $stmt ->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -44,8 +39,8 @@ $stmt ->setFetchMode(PDO::FETCH_ASSOC);
             </thead>
             <tbody>
         <?php
+        
         while($reserva = $stmt->fetch()){
-            echo "11";
             echo '<tr>';
             echo '<td>'.$reserva['id'].'</td>';
             echo '<td>'.$reserva['id_cliente'].'</td>';

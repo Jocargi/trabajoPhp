@@ -6,6 +6,3 @@ if (empty($_SESSION["correo"])){
 }
 
 ?>
-
-
-

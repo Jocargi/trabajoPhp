@@ -12,8 +12,8 @@
 <body>
     <h1>Menu de clientes</h1>
     <section>
-        <a href="vistaReservasCliente.php" id="enlace">Haga sus reservas</a>
-        <a href=""id="enlace">Mis reservas</a>
+        <a href="" id="enlace">Haga sus reservas</a>
+        <a href="vistaReservasCliente.php"id="enlace">Mis reservas</a>
         <a href=""id="enlace">Mis Datos</a>
     </section>
 </body>
