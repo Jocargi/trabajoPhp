@@ -16,8 +16,6 @@ $telefono = $_POST['telefono'];
 $password = $_POST['password'];
 $nombreUsuario = strtolower($nombre.substr($primer_apellido, 0, 1));
 
-
-
 $sql_cliente = "INSERT INTO CLIENTE VALUES (:DNI, :NOMBRE, :PRIMER_APELLIDO, :SEGUNDO_APELLIDO, :CORREO, :DIRECCION, :LOCALIDAD, :TELEFONO)";
 
 $sql_usuario = "INSERT INTO USUARIO VALUES (:NOMBRE, :CORREO, :PASS, :ROL, :ID_CLIENTE)";
