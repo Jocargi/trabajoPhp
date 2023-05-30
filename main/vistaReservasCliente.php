@@ -1,17 +1,24 @@
 <?php
-require_once('auth_inc.php');
-require_once('dbaccess.php');
 
-if(empty($_SESSION['correo'])){
-    header("index.php");
-    exit(1);
-}
+require "auth_inc.php";
+require "dbaccess.php";
 
 $correo = $_SESSION['correo'];
+echo $_SESSION['correo'];
+
 $sql = "SELECT r.* FROM reserva r JOIN cliente c on c.dni = r.id_cliente 
-                                JOIN habitacion h on h.id_reserva=r.id
-        where c.correo='$correo'";
-$stmt = pdo->execute($sql);
+                                JOIN habitacion h on h.id=r.id_habitacion
+        where c.correo like :correo";
+
+$arrayValues = [];
+
+$arrayValues['correo'] = $correo;
+
+$stmt = $pdo->prepare($sql);
+$stmt -> execute($arrayValues);
+
+$stmt ->setFetchMode(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -23,24 +30,33 @@ $stmt = pdo->execute($sql);
 </head>
 <body>
     <header>
-        <h1>Mis reservas</h1>
+        <h1>MIS RESERVAS</h1>
     </header>
     <main>
         <table>
             <thead>
-                <th>Entrada</th>
-                <th>Salida</th>
-                <th>Num. Personas</th>
+                <tbody>
+                    <th>Id</th>
+                    <th>id_cliente</th>
+                    <th>id_habitacion</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
             </thead>
+            <tbody>
         <?php
-        while($reserva = $stmt->fetch(PDO::FETCH_ASSOC)){
+        while($reserva = $stmt->fetch()){
+            echo "11";
             echo '<tr>';
+            echo '<td>'.$reserva['id'].'</td>';
+            echo '<td>'.$reserva['id_cliente'].'</td>';
+            echo '<td>'.$reserva['id_habitacion'].'</td>';
             echo '<td>'.$reserva['fecha_entrada'].'</td>';
             echo '<td>'.$reserva['fecha_salida'].'</td>';
-            echo '<td>'.$reserva['num_personas'].'</td>';
             echo '</tr>';
-        }        
+        }
+
         ?>
+        </tbody>
         </table>
     </main>
 </body>

@@ -1,5 +1,7 @@
+<?php require_once "auth_inc.php" ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +12,7 @@
 <body>
     <h1>Menu de clientes</h1>
     <section>
-        <a href="" id="enlace">Haga sus reservas</a>
+        <a href="vistaReservasCliente.php" id="enlace">Haga sus reservas</a>
         <a href=""id="enlace">Mis reservas</a>
         <a href=""id="enlace">Mis Datos</a>
     </section>

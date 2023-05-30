@@ -27,11 +27,11 @@ if(!empty($resultado)){
     header("Location: login.php");
 }
 
+$_SESSION['correo'] = $resultado['correo'];
+
 if(($resultado['rol'])){
-    $_SESSION['correo'] = $resultado['correo'];
     header("Location: vistaMenuAdministrador.php");
 } else{
-    $_SESSION['id'] = $resultado['id_cliente'];
     header("Location: menu_clientes.php"); 
 }
 
