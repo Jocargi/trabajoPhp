@@ -30,7 +30,7 @@ if(!empty($resultado)){
 if(($resultado['rol'])){
     $_SESSION['correo'] = $resultado['correo'];
     header("Location: vistaAdministradorCliente.php");
-}
+} else {
 
     $sql_cliente= "SELECT * FROM CLIENTE WHERE dni like :dni";
 
@@ -45,7 +45,7 @@ if(($resultado['rol'])){
     $_SESSION['nombre'] = $resultado['nombre'];
 
 
-    header("Location: menu_clientes.php"); 
+    header("Location: menu_clientes.php");
+    }
 }
-
 ?>
