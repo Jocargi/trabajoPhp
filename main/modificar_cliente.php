@@ -1,30 +1,33 @@
 <?php
 require_once('dbaccess.php');
-$_GET['id'] = 123456789;
+$_GET['id'] = 369852147;
 $dni = $_GET['id'];
 $usuarioActualizado=false;
 if(isset($_GET['id']) && !empty($_GET['id'])) {
-    $id_cliente = 123456789;
+    $id_cliente = 369852147;
     $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
     $stmt->execute(array(':id'=>$id_cliente));
     $cliente = $stmt->fetch();
 }
 else{
-    header('Location: index.html');
+    header('Location: index.php');
 }
 
+if(!$usuarioActualizado)
 //Comprueba si se ha enviado la petición de modificar el cliente
 if(isset($_POST) && !empty($_POST)){
     $usuarioActualizado = true;
-    $sql = "UPDATE cliente SET nombre=:nombre, apellido1=:apellido_1, apellido2=:apellido_2,email=:email, direccion=:direccion, localidad=:localidad, telefono=:telefono WHERE dni=:id";
-    $stmt -> prepare($sql);
+    $sql = "UPDATE cliente SET nombre=:nombre, apellido_1=:apellido_1, apellido_2=:apellido_2,correo=:correo, direccion=:direccion, localidad=:localidad, telefono=:telefono WHERE dni=:id";
     $nombre = $_POST['nombre'];
     $apellido1 = $_POST['apellido1'];
     $apellido2 = $_POST['apellido2'];
-    $email = $_POST['email'];
+    $correo = $_POST['correo'];
     $direccion = $_POST['direccion'];
     $localidad = $_POST['localidad'];
-    $stmt->execute(array(':dni'=>$dni, ':nombre'=>$id_cliente, ':apellido1'=>$apellido1, ':apellido2'=>$apellido2, ':email'=>$email, ':direccion'=>$direccion, ':localidad'=>$localidad));
+    $telefono = $_POST['telefono'];
+
+    $stmt = $pdo -> prepare($sql);
+    $stmt->execute(array(':id'=>$dni, ':nombre'=>$nombre, ':apellido_1'=>$apellido1, ':apellido_2'=>$apellido2, ':correo'=>$correo, ':direccion'=>$direccion, ':localidad'=>$localidad, ':telefono'=>$telefono));
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +37,7 @@ if(isset($_POST) && !empty($_POST)){
     <title>Modificar Cliente</title>
     <link rel="stylesheet" href="stylesRegistro.css">
     <link rel="stylesheet" href="styles_Menu_clientes.css">
-    <script src=""></script>p
+    <script src=""></script>
 </head>
 <body>
     <header>
@@ -70,7 +73,7 @@ if(isset($_POST) && !empty($_POST)){
                 <label for="email">
                     Email:
                 </label>
-            <input type="text" name="email" value=<?php echo "".$cliente['correo']."";?>>
+            <input type="text" name="correo" value=<?php echo "".$cliente['correo']."";?>>
             </div>
             <div>
                 <label for="direccion">
@@ -92,7 +95,7 @@ if(isset($_POST) && !empty($_POST)){
             </div>
             <input type="submit" value="Modificar">
         </form>
-        <div style="<?php echo $usuarioActualizado ? "" : "display=none".";" ?>" id="mensajeClienteModificado"><h3>¡Cliente modificado!</h3></div>
+        <div style="<?php echo $usuarioActualizado ? "" : "display:none;" ?>" id="mensajeClienteModificado"><h3>¡Cliente modificado!</h3></div>
     </main>
 </body>
 </html>
