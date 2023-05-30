@@ -66,3 +66,8 @@ section{
   background-color: rgba(11,6,56,0.801);
   color: azure;
 }
+
+#mensajeClienteModificado{
+  padding: 3%;
+  background-color: yellow;
+}
