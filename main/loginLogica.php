@@ -29,12 +29,23 @@ if(!empty($resultado)){
 
 if(($resultado['rol'])){
     $_SESSION['correo'] = $resultado['correo'];
-    header("Location: vistaMenuAdministrador.php");
-} else{
-    $_SESSION['id'] = $resultado['id_cliente'];
-    header("Location: menu_clientes.php"); 
+    header("Location: vistaAdministradorCliente.php");
 }
 
+    $sql_cliente= "SELECT * FROM CLIENTE WHERE dni like :dni";
+
+    $stmt = $pdo -> prepare($sql_cliente);
+    $stmt -> execute(array(':dni'=> $resultado['id_cliente']));
+
+    $stmt -> setFetchMode(PDO::FETCH_ASSOC);
+
+    $resultado = $stmt ->fetch();
+
+    $_SESSION['id'] = $resultado['dni'];
+    $_SESSION['nombre'] = $resultado['nombre'];
+
+
+    header("Location: menu_clientes.php"); 
 }
 
 ?>

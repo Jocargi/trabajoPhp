@@ -1,3 +1,5 @@
+<?php require "auth_inc_cliente.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,14 @@
     <link rel="stylesheet" href="styles_Menu_clientes.css">
 </head>
 <body>
-    <h1>Menu de clientes</h1>
+    <header>
+    <h1>Hola de nuevo, <?php echo $_SESSION['nombre']; ?></h1>
+    <div class="name-banner">
+        <button name="logout" onclick="location.href='cerrar_sesion.php'"><?php
+        echo $_SESSION['nombre'] ?>
+        </button>
+    </div>
+    </header>
     <section>
         <a href="" id="enlace">Haga sus reservas</a>
         <a href=""id="enlace">Mis reservas</a>

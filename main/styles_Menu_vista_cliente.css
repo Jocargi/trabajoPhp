@@ -10,6 +10,22 @@ h1{
     height: 50px;
 }
 
+header button{
+    background-color: rgb(66, 137, 15);
+    color: aliceblue;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5%;
+    transition: 150ms;
+}
+
+header button:hover{
+    padding: 7px;
+    position: relative;
+    font-size: 20px;
+}
+
+
 td{
     border: 0px;
     background-color:antiquewhite;

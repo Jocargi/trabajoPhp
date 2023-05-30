@@ -11,7 +11,7 @@
     <script src="eliminarCliente.js" type="text/javascript"></script>
 </head>
 <body>
-<h1>CLIENTES</h1>
+<h1>ADMINISTRACION CLIENTES</h1>
     <header>
         <div class="name-banner">
             <button name="logout" onclick="location.href='cerrar_sesion.php'"><?php
@@ -20,7 +20,9 @@
         </div>
         <nav>
             <ul>
-                <a href="vistaMenuAdministrador.php"><li>Volver al menu</li></a>
+                <a href="vistaAdministradorCliente.php"><li>CLIENTE</li></a>
+                <a href="vistaAdministradorReserva.php"><li>RESERVA</li></a>
+                <a href="vistaAdministradorHabitacion.php"><li>HABITACION</li></a>
             </ul>
         </nav>
     </header>

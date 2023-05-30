@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <h1>RESERVAS</h1>
+    <h1> ADMINISTRACION RESERVAS</h1>
 
     <header>
         <div class="name-banner">
@@ -20,7 +20,9 @@
         </div>
         <nav>
             <ul>
-                <a href="vistaMenuAdministrador.php"><li>Volver al menu</li></a>
+            <a href="vistaAdministradorCliente.php"><li>CLIENTE</li></a>
+                <a href="vistaAdministradorReserva.php"><li>RESERVA</li></a>
+                <a href="vistaAdministradorHabitacion.php"><li>HABITACION</li></a>
             </ul>
         </nav>
     </header>
