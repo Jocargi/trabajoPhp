@@ -1,10 +1,10 @@
 <?php
 require_once('dbaccess.php');
-$_GET['id'] = 369852147;
+$_GET['id'] = 123456789;
 $dni = $_GET['id'];
 $usuarioActualizado=false;
 if(isset($_GET['id']) && !empty($_GET['id'])) {
-    $id_cliente = 369852147;
+    $id_cliente = 123456789;
     $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
     $stmt->execute(array(':id'=>$id_cliente));
     $cliente = $stmt->fetch();
@@ -13,7 +13,6 @@ else{
     header('Location: index.php');
 }
 
-if(!$usuarioActualizado)
 //Comprueba si se ha enviado la petición de modificar el cliente
 if(isset($_POST) && !empty($_POST)){
     $usuarioActualizado = true;
@@ -28,7 +27,13 @@ if(isset($_POST) && !empty($_POST)){
 
     $stmt = $pdo -> prepare($sql);
     $stmt->execute(array(':id'=>$dni, ':nombre'=>$nombre, ':apellido_1'=>$apellido1, ':apellido_2'=>$apellido2, ':correo'=>$correo, ':direccion'=>$direccion, ':localidad'=>$localidad, ':telefono'=>$telefono));
+
+    $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
+    $stmt->execute(array(':id' => $dni));
+    $cliente = $stmt->fetch();
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -49,49 +54,49 @@ if(isset($_POST) && !empty($_POST)){
                 <label for="dni">
                     DNI:
                 </label>
-            <input type="text" name="dni" value=<?php echo "".$cliente['dni']."";?> readonly>
+            <input type="text" name="dni" value="<?php echo "".$cliente['dni']."";?>" readonly>
             </div>
             <div>
                 <label for="nombre">
                     Nombre:
                 </label>
-            <input type="text" name="nombre" value=<?php echo "".$cliente['nombre']."";?>>
+            <input type="text" name="nombre" value="<?php echo "".$cliente['nombre']."";?>">
             </div>
             <div>
                 <label for="apellido1">
                     Primer apellido:
                 </label>
-            <input type="text" name="apellido1" value=<?php echo "".$cliente['apellido_1']."";?>>
+            <input type="text" name="apellido1" value="<?php echo "".$cliente['apellido_1']."";?>">
             </div>
             <div>
                 <label for="apellido2">
                     Segundo apellido:
                 </label>
-            <input type="text" name="apellido2" value=<?php echo "".$cliente['apellido_2']."";?>>
+            <input type="text" name="apellido2" value="<?php echo "".$cliente['apellido_2']."";?>">
             </div>
             <div>
                 <label for="email">
                     Email:
                 </label>
-            <input type="text" name="correo" value=<?php echo "".$cliente['correo']."";?>>
+            <input type="text" name="correo" value="<?php echo "".$cliente['correo']."";?>">
             </div>
             <div>
                 <label for="direccion">
                     Direccion:
                 </label>
-                <input type="text" name="direccion" value=<?php echo "".$cliente['direccion']."";?>>
+                <input type="text" name="direccion" value="<?php echo "".$cliente['direccion']."";?>">
             </div>
             <div>
                 <label for="localidad">
                     Localidad:
                 </label>
-                <input type="text" name="localidad" value=<?php echo "".$cliente['localidad']."";?>>
+                <input type="text" name="localidad" value="<?php echo "".$cliente['localidad']."";?>">
             </div>
             <div>
                 <label for="telefono">
                     Telefono:
                 </label>
-                <input type="text" name="telefono" value=<?php echo "".$cliente['telefono']."";?>>
+                <input type="text" name="telefono" value="<?php echo "".$cliente['telefono']."";?>">
             </div>
             <input type="submit" value="Modificar">
         </form>
