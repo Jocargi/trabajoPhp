@@ -12,7 +12,7 @@
     <section>
         <a href="" id="enlace">Haga sus reservas</a>
         <a href=""id="enlace">Mis reservas</a>
-        <a href=""id="enlace">Mis Datos</a>
+        <a href="modificar_cliente.php"id="enlace">Mis Datos</a>
     </section>
 </body>
 </html>

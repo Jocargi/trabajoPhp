@@ -1,10 +1,10 @@
 <?php
 require_once('dbaccess.php');
-$_GET['id'] = 123456789;
+$_GET['id'] = 147258369;
 $dni = $_GET['id'];
 $usuarioActualizado=false;
 if(isset($_GET['id']) && !empty($_GET['id'])) {
-    $id_cliente = 123456789;
+    $id_cliente = 147258369;
     $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
     $stmt->execute(array(':id'=>$id_cliente));
     $cliente = $stmt->fetch();

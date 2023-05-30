@@ -27,6 +27,14 @@ form{
   padding: 35px 0;
 }
 
+h1{
+  text-align: center;
+  align-items: center;
+  background-color: rgba(11, 6, 56, 0.801);
+  color: aliceblue;
+  height: 50px;
+}
+
 .img-login{
   width: 100%;
   text-align: center;
