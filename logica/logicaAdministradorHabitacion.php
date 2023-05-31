@@ -9,7 +9,7 @@ $campos = [
     'Descripcion'
 ];
 
-    require_once "dbaccess.php";
+    require_once "../main/dbaccess.php";
 
     $pagina = (isset($_POST['pagina'])) ? (int) $_POST['pagina'] : 1;
     

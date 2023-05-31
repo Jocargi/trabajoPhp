@@ -32,7 +32,7 @@ if ($enviarPresed) {
 
         if (($resultado['rol'])) {
             $_SESSION['correo'] = $resultado['correo'];
-            header("Location: vistaAdministradorCliente.php");
+            header("Location: ../vista/vistaAdministradorCliente.php");
         } else {
 
             $sql_cliente = "SELECT * FROM CLIENTE WHERE dni like :dni";
@@ -63,7 +63,7 @@ if ($enviarPresed) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="stylesLogin.css">
+    <link rel="stylesheet" href="../css/stylesLogin.css">
 </head>
 
 <body>

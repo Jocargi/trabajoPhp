@@ -1,17 +1,13 @@
 <?php
-require_once('dbaccess.php');
-$_GET['id'] = 147258369;
-$dni = $_GET['id'];
-$usuarioActualizado=false;
-if(isset($_GET['id']) && !empty($_GET['id'])) {
-    $id_cliente = 147258369;
+    require_once "auth_inc_cliente.php";
+    require_once('dbaccess.php');
+
+    $dni = $_SESSION['id'];
     $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
-    $stmt->execute(array(':id'=>$id_cliente));
+    $stmt->execute(array(':id' => $dni));
     $cliente = $stmt->fetch();
-}
-else{
-    header('Location: index.php');
-}
+
+    $usuarioActualizado = false;
 
 //Comprueba si se ha enviado la petición de modificar el cliente
 if(isset($_POST) && !empty($_POST)){
@@ -27,28 +23,33 @@ if(isset($_POST) && !empty($_POST)){
 
     $stmt = $pdo -> prepare($sql);
     $stmt->execute(array(':id'=>$dni, ':nombre'=>$nombre, ':apellido_1'=>$apellido1, ':apellido_2'=>$apellido2, ':correo'=>$correo, ':direccion'=>$direccion, ':localidad'=>$localidad, ':telefono'=>$telefono));
+    $stmt -> setFetchMode(PDO::FETCH_ASSOC);
+
+    $_SESSION['nombre'] = $nombre;
 
     $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
     $stmt->execute(array(':id' => $dni));
     $cliente = $stmt->fetch();
+
 }
-
-
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Modificar Cliente</title>
-    <link rel="stylesheet" href="stylesRegistro.css">
-    <link rel="stylesheet" href="styles_Menu_clientes.css">
+    <link rel="stylesheet" href="../css/stylesRegistro.css">
+    <link rel="stylesheet" href="../css/styles_Menu_clientes.css">
     <script src=""></script>
 </head>
 <body>
     <header>
         <h1>Modificar cliente: <?php echo $cliente['nombre']; ?></h1>
+        <a href="menu_clientes.php">Volver</a>
     </header>
     <main id="main_modificar_cliente">
+    
         <form action="modificar_cliente.php" method="post">
             <div>
                 <label for="dni">
@@ -99,8 +100,9 @@ if(isset($_POST) && !empty($_POST)){
                 <input type="text" name="telefono" value="<?php echo "".$cliente['telefono']."";?>">
             </div>
             <input type="submit" value="Modificar">
+            <div style="<?php echo $usuarioActualizado ? "" : "display:none;"; ?>" id="mensajeClienteModificado"><h3>¡Cliente modificado!</h3></div>
         </form>
-        <div style="<?php echo $usuarioActualizado ? "" : "display:none;" ?>" id="mensajeClienteModificado"><h3>¡Cliente modificado!</h3></div>
+        
     </main>
 </body>
 </html>
