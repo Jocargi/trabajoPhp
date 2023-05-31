@@ -114,3 +114,10 @@ h1{
   text-decoration: underline;
   color: #06b;
 }
+
+.mensajeError > h3{
+  color: rgb(227, 219, 219);
+  background-color: rgb(85, 3, 3);
+  padding: 10px;
+  border-radius: 10px;
+}
