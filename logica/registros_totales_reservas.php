@@ -1,6 +1,6 @@
 <?php 
-    
-    print_r($arrayValues_reserva);
+
+    require_once "../main/dbaccess.php";
 
     $sql_countR = "SELECT COUNT(*) as total_registros FROM RESERVA WHERE TRUE";
 

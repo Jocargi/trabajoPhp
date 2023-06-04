@@ -2,9 +2,9 @@
 
 require_once "dbaccess.php";
 
-    $fecha_entrada = isset($_GET['reset']) ? "": $_GET['fecha-entrada'];
-    $fecha_salida =  isset($_GET['reset']) ? "":$_GET['fecha-salida'];
-    $personas = isset($_GET['reset']) ? "":(int) $_GET['personas'];
+    $fecha_entrada = $_GET['fecha-entrada'];
+    $fecha_salida =  $_GET['fecha-salida'];
+    $personas = (int) $_GET['personas'];
 
     $selected1 = (int)$personas  == 1 ? "selected" : "none";
     $selected2 = (int)$personas  == 2 ? "selected" : "none";
@@ -89,8 +89,9 @@ require_once "dbaccess.php";
                                 <option value="4">4</option>
                             </select>
                             <?php echo $habitaciones['precio'] . " €"; ?>
-                            <input type="hidden" name="id" value="<?php echo $id; ?>" >
-                            <input type="button" name="<?php echo $id; ?>" value="RESERVAR" onclick="parametroHabitacion('<?php echo $id ?>', numero_habitaciones)">
+                            <input type="hidden" name="fecha_entrada" value="<?php echo $fecha_entrada; ?>" >
+                            <input type="hidden" name="fecha_salida" value="<?php echo $fecha_salida; ?>" >
+                            <input type="button" name="<?php echo $id; ?>" value="RESERVAR" onclick="parametroHabitacion('<?php echo $id ?>', '<?php echo $fecha_entrada ?>', '<?php echo $fecha_salida?>')">
                         </div>
                     </div>
                     

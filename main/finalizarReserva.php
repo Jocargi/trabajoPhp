@@ -18,13 +18,17 @@ $reservar_pressed = isset($_POST['reservar']);
 
 if($reservar_pressed){
 
-    $sql_insert_reserva = "INSERT INTO RESERVA (id_cliente, id_habitacion, fecha_entrada, fecha_salida) VALUES (':id_cliente', ':id_habitacion', ':fecha_entrada', ':fecha_salida')";
+    $sql_insert_reserva = "INSERT INTO RESERVA (id_cliente, id_habitacion, fecha_entrada, fecha_salida) VALUES (:id_cliente, :id_habitacion, :fecha_entrada, :fecha_salida);";
     $stmt = $pdo->prepare($sql_insert_reserva);
+
+    $arrayValues_reserva[':id_cliente'] = $_POST['dni'];
+    $arrayValues_reserva['id_habitacion'] = $_GET['id'];
+    $arrayValues_reserva[':fecha_entrada'] = $_GET['fecha_entrada'];
+    $arrayValues_reserva[':fecha_salida'] = $_GET['fecha_salida'];
     
-    if ($stmt ->execute()) header("Location: ../main/index.php");
+    if ($stmt ->execute($arrayValues_reserva)) header("Location: ../main/index.php");
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -45,19 +49,18 @@ if($reservar_pressed){
             <?php
                 echo '<div class="habitacion">';
             ?>    
+                <div class="img-habitacion">
+                    <?php echo "<img src=". $habitacion['ruta_imagen']. ">"; ?>
+                </div>
 
-                    <div class="img-habitacion">
-                        <?php echo "<img src=". $habitacion['ruta_imagen']. ">"; ?>
+                <div class="info-hab">
+                    <?php echo "<h2>". "Habitacion ". $habitacion['nombre']."</h2>" ?>
+                    <?php echo "<p>". $habitacion['descripcion']."</p>" ?>
+                    <div class="precio">
+                        <?php
+                        echo "Numero de habitaciones: " . (int) $_GET['numero_habitaciones']. " x ". $habitacion['precio']. ": " . ((int) $_GET['numero_habitaciones']*(int)$habitacion['precio']) . " €"; ?>
                     </div>
-
-                    <div class="info-hab">
-                        <?php echo "<h2>". "Habitacion ". $habitacion['nombre']."</h2>" ?>
-                        <?php echo "<p>". $habitacion['descripcion']."</p>" ?>
-                        <div class="precio">
-                            <?php
-                            echo "Numero de habitaciones: " . (int) $_GET['numero_habitaciones']. " x ". $habitacion['precio']. ": " . ((int) $_GET['numero_habitaciones']*(int)$habitacion['precio']) . " €"; ?>
-                        </div>
-                    </div>
+                </div>
             <?php   
                 echo '</div>'; 
             ?>

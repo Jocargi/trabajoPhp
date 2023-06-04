@@ -47,7 +47,7 @@ if ($enviarPresed) {
             $_SESSION['id'] = $resultado['dni'];
             $_SESSION['nombre'] = $resultado['nombre'];
 
-            header("Location: menu_clientes.php");
+            header("Location: ../vista/vistaReservasPersonal.php");
         }
     }
 }

@@ -39,17 +39,17 @@ if(isset($_POST) && !empty($_POST)){
 <head>
     <meta charset="UTF-8">
     <title>Modificar Cliente</title>
-    <link rel="stylesheet" href="../css/stylesRegistro.css">
-    <link rel="stylesheet" href="../css/styles_Menu_clientes.css">
-    <script src=""></script>
+    <link rel="stylesheet" href="../css/stylesModificarDatos.css">
+</head>
 </head>
 <body>
     <header>
-        <h1>Modificar cliente: <?php echo $cliente['nombre']; ?></h1>
-        <a href="menu_clientes.php">Volver</a>
+        <h1>Modificar datos</h1>
+        <div class="parte-abajo">
+            <a href="../vista/vistaReservasPersonal.php">Volver</a>
+        </div>
     </header>
     <main id="main_modificar_cliente">
-    
         <form action="modificar_cliente.php" method="post">
             <div>
                 <label for="dni">
@@ -99,7 +99,9 @@ if(isset($_POST) && !empty($_POST)){
                 </label>
                 <input type="text" name="telefono" value="<?php echo "".$cliente['telefono']."";?>">
             </div>
-            <input type="submit" value="Modificar">
+            <div class="btn-modificar">
+                <input type="submit" value="Modificar">
+            </div>
             <div style="<?php echo $usuarioActualizado ? "" : "display:none;"; ?>" id="mensajeClienteModificado"><h3>¡Cliente modificado!</h3></div>
         </form>
         
