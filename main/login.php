@@ -12,7 +12,10 @@ if ($enviarPresed) {
 
     $mensaje = false;
 
-    $sql = "SELECT correo, contrasena, rol, id_cliente FROM usuario WHERE correo LIKE :email AND contrasena LIKE :password";
+    $sql = "SELECT u.correo, u.contrasena, u.rol FROM usuario u 
+    JOIN usuario_cliente uc ON uc.id_usuario = u.nombre
+    JOIN cliente c ON uc.id_cliente = c.dni
+    WHERE u.correo LIKE :email AND u.contrasena LIKE :password";
 
     $array_values = [];
 
