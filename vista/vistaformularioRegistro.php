@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>REGISTRO</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
-  <link href="stylesRegistro.css" rel="stylesheet" type="text/css">
+  <link href="../css/stylesRegistro.css" rel="stylesheet" type="text/css">
   <script src="mostrarPassword.js" type="text/javascript"></script>
 </head>
 
@@ -34,7 +34,7 @@
           <label><input type="checkbox" name="terms" required> Registr&aacute;ndote en la p&aacute;gina est&aacute;s aceptando nuestra
             pol&iacute;tica de condiciones <a href="http://www.globalacademyjobs.com/terms.aspx">t&eacute;rminos y condiciones.</a></label>
           
-            <?php include "logicaFormularioRegistro.php" ?>
+            <?php include "../logica/logicaFormularioRegistro.php" ?>
           
             <input type="submit" value="Registrarme" name="registrarme">
 

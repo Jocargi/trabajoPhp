@@ -1,6 +1,6 @@
 <?php
 
-require_once "dbaccess.php";
+require_once "../main/dbaccess.php";
 
 $registrarme_pressed = isset($_POST['registrarme']);
 if($registrarme_pressed){

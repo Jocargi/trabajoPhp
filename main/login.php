@@ -82,7 +82,7 @@ if ($enviarPresed) {
                     <input type="password" id="password" class="input-login" name="password" placeholder="Contraseña" />
                     <input type="submit" name="enviar" class="submit" value="INICIAR SESION">
                     <div class="no-registrado">
-                        <a href="vistaformularioRegistro.php">¿Aun no te has registrado?</a>
+                        <a href="../vista/vistaformularioRegistro.php">¿Aun no te has registrado?</a>
                     </div>
                 </form>
             </div>

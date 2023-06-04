@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarifa Dreams</title>
     <link rel="stylesheet" href="../css/stylesMain.css" type="text/css">
+    <script src="../js/fechaAnterior.js"></script>
+    <script src="../js/personasMinimas.js"></script>
 </head>
 <body>
     <header>
@@ -33,18 +35,24 @@
             <img src="images/16468231897426.jpg" alt="" id="img1">
             <div class="formulario">
                 <span>HAZ TU RESERVA YA</span>
-                <form action="index.php" method="post">
-                    <label for="numero-personas">Personas</label>
-                    <input type="number" name="numero-personas" id="numero-personas" required>
+                <form action="crearReserva.php" method="get">
                     <label for="fecha-entrada">Fecha entrada</label>
                     <input type="date" name="fecha-entrada" id="fecha-entrada" required>
                     <label for="fecha_salida">Fecha salida</label>
                     <input type="date" name="fecha-salida" id="fecha-salida" required>
+                    <label for="personas">Personas</label>
+                   <select name="personas">
+                        <option value="" selected>SELECCIONAR</option> 
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                    </select>
                     <input type="submit" name="buscar" id="buscar-habitaciones" value="BUSCA LAS MEJORES HABITACIONES">
-                  
                 </form>
             </div>
         </div>
+
+    
 
     <footer>
       <section id="f1">
