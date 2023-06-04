@@ -51,7 +51,7 @@ require_once "dbaccess.php";
     <h1>Tarifa dreams</h1>
     <div class="name-banner">
         <form action="crearReserva.php" method="get">
-            <input type="date" name="fecha-entrada" id="fecha-entrada" value="<?php echo $fecha_entrada; ?>" required >
+            <input type="date" name="fecha-entrada" id="fecha-entrada" value="<?php echo $fecha_entrada; ?>" required>
             <input type="date" name="fecha-salida" id="fecha-salida" value="<?php echo $fecha_salida; ?>" required>
             <select name="personas">
                 <option value="*" <?php echo $selected4; ?> >Cualquiera</option>
