@@ -14,6 +14,15 @@ $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 $habitacion = $stmt->fetch();
 
+$reservar_pressed = isset($_POST['reservar']);
+
+if($reservar_pressed){
+
+    $sql_insert_reserva = "INSERT INTO RESERVA (id_cliente, id_habitacion, fecha_entrada, fecha_salida) VALUES (':id_cliente', ':id_habitacion', ':fecha_entrada', ':fecha_salida')";
+    $stmt = $pdo->prepare($sql_insert_reserva);
+    
+    if ($stmt ->execute()) header("Location: ../main/index.php");
+}
 ?>
 
 
