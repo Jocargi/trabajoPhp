@@ -4,12 +4,13 @@
   }
   
   header{
-    display: inline;
+    display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: rgba(11, 6, 56, 0.801);
     color: aliceblue;
-   
+    position: relative;
   }
   
   h1{
@@ -28,11 +29,15 @@
     background-color: white;
     border-radius: 5px;
     height: 89px;
-    position: absolute;
+    position: fixed;
     text-align: center;
+    margin-top: 120px;
+    border: 1px solid rgba(255, 187, 0, 0.359);
+    border-bottom: 2.5px solid rgba(255, 187, 0, 0.359);
+    border-top: none;
   }
 
-  input, select{
+  header input, select{
     border-radius: 4px;
     padding: 7px;
     margin-top: 8px;
@@ -40,6 +45,11 @@
     margin-bottom: 5px;
     font-size: 1.1em;
     border: 1px solid rgba(12, 12, 72, 0.353);
+  }
+
+  #enviar, #reset{
+    background-color: rgba(15, 146, 190, 0.801);
+    color: azure;
   }
 
   form{
@@ -54,29 +64,26 @@
     width: 150px;
   }
 
-  hr{
-    border: 1px solid black;
-  }
-
   .container-habitacion{
     width: 100%;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .content-habitacion{
-    display: flex;
-    justify-content: space-around;
-    
+  .habitacion{
+    display: block;
+    border: 1px solid rgba(14, 100, 116, 0.172);
+    margin-top: 100px;
+    width: 70%;
+    border-radius: 5px;
   }
 
-  .habitacion{
-    border: 1px solid black;
-    height: 500px;
-    margin-top: 100px;
-    width: 90%;
-    border-radius: 5px;
+  .content-habitacion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  
   }
 
   .img-habitacion{
@@ -84,10 +91,49 @@
   }
   
   .img-habitacion img{
-    width: 80%;
+    width: 90%;
     margin: 30px;
+    border-radius: 25px;
   }
 
   .info-hab{
+    display: flex;
+    flex-direction: column;
     width: 40%;
+    margin-top: 25px;
   }
+
+  .info-hab > p{
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .datos-hab{
+    display: block;
+  }
+  
+.precio{
+    display: flex;
+    justify-content: space-around;
+    font-size: 40px;
+    margin-top: 30px;
+  }
+
+.precio select{
+  font-size: 15px;
+}
+
+.precio input{
+  border-radius: 4px;
+  padding: 7px;
+  margin-top: 8px;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  border: 1px solid rgba(12, 12, 72, 0.353);
+  background-color: rgba(15, 146, 190, 0.801);
+  color: azure;
+}
+
+.precio {
+
+}
