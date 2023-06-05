@@ -8,13 +8,17 @@ $enviar_pressed = isset($_POST["enviar"]);
 
 if($enviar_pressed){
 
-$sql = "SELECT correo, contrasena, rol, id_cliente FROM usuario WHERE correo LIKE :email AND contrasena LIKE :password";
+$sql = "SELECT u.correo, u.contrasena, u.rol FROM usuario u 
+JOIN usuario_cliente uc ON uc.id_usuario = u.nombre
+JOIN cliente c ON uc.id_cliente = c.dni
+WHERE u.correo LIKE :email AND u.contrasena LIKE :password";
 
-$array_values=[];
+$array_values=[
+    ':email' => $email,
+    ':password' => $password
+];
+
 $resultado=[];
-
-$array_values[":email"] = $email;
-$array_values[":password"] = $password;
 
 $stmt = $pdo->prepare($sql);
 $resultado = $stmt->execute($array_values);
@@ -39,6 +43,7 @@ if(($resultado['rol'])){
 
     $stmt -> setFetchMode(PDO::FETCH_ASSOC);
 
+    print_r($resultado);
     $resultado = $stmt ->fetch();
 
     $_SESSION['id'] = $resultado['dni'];
@@ -46,5 +51,9 @@ if(($resultado['rol'])){
 
     header("Location: ../vista/vistaReservasPersonal.php");
     }
+}catch(PDOException $e){
+    echo $e->get_message();
 }
+
+
 ?>
