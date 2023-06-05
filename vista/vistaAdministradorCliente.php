@@ -1,4 +1,9 @@
-<?php require_once "../main/auth_inc.php"; ?>
+<?php 
+
+require_once "../main/auth_inc.php";
+require_once "../main/auth_inc_admin.php";
+
+?>
 
 <!DOCTYPE html>
 <html lang="es">
