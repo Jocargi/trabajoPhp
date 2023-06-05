@@ -22,6 +22,7 @@ $stmt->execute($arrCorreo);
     <meta charset="UTF-8">
     <title>Mis reservas</title>
     <link rel="stylesheet" href="../css/stylesMenuAdministrador.css">
+    <link rel="stylesheet" href="../css/stylesMostrarReservas.css">
 </head>
 <body>
     <header>
