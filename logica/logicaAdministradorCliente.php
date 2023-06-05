@@ -108,7 +108,8 @@ $campos = [
 
     while($resultado = $stmt -> fetch()){
 
-        $correoEliminacion = $resultado['correo']; 
+        $correoEliminacion = $resultado['correo'];
+        $idEliminacion = $resultado['dni'];
 
         echo "<tr>";
         echo "<td>".$resultado["nombre"]."</td>";
@@ -119,7 +120,7 @@ $campos = [
         echo "<td>".$resultado["direccion"]."</td>";
         echo "<td>".$resultado["localidad"]."</td>";
         echo "<td>".$resultado["telefono"]."</td>";
-        echo "<td>"."<input type='submit' name='modificar' id='btn_modificar' value='MODIFICAR'>" . "</td>"; 
+        echo "<td>"."<input type='button' name='$idEliminacion' id='btn_modificar' value='MODIFICAR' onclick= modificarCliente('$idEliminacion') >" . "</td>"; 
         echo "<td>"."<input type='button' name='$correoEliminacion' id='btn_eliminar' value='ELIMINAR' onclick= eliminarCliente('$correoEliminacion') >". "</td>";
         echo "</tr>";
     }

@@ -9,6 +9,7 @@
     <title>Menu Administrador</title>
     <link rel="stylesheet" href="../css/stylesMenuAdministrador.css" type="text/css">
     <script src="../js/eliminarCliente.js" type="text/javascript"></script>
+    <script src="../js/modificarCliente.js" type="text/javascript"></script>
 </head>
 <body>
 <h1>ADMINISTRACION CLIENTES</h1>

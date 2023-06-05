@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION["correo"])){
-    header("Location: index.php");
+    header("Location: ../main/index.php");
     exit();
 }
 ?>

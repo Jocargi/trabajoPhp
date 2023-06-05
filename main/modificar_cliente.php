@@ -1,8 +1,12 @@
 <?php
-    require_once "auth_inc_cliente.php";
+
+    require_once "auth_inc.php";
     require_once('dbaccess.php');
 
-    $dni = $_SESSION['id'];
+    $ruta =  !$_SESSION['rol'] ? "../vista/vistaReservasPersonal.php" : "../vista/vistaAdministradorCliente.php";
+
+    $dni = isset($_SESSION['id'])? $_SESSION['id'] : $_GET['id'];
+
     $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
     $stmt->execute(array(':id' => $dni));
     $cliente = $stmt->fetch();
@@ -46,7 +50,7 @@ if(isset($_POST) && !empty($_POST)){
     <header>
         <h1>Modificar datos</h1>
         <div class="parte-abajo">
-            <a href="../vista/vistaReservasPersonal.php">Volver</a>
+            <a href="<?php echo $ruta; ?>">Volver</a>
         </div>
     </header>
     <main id="main_modificar_cliente">

@@ -1,6 +1,6 @@
 <?php
 
-require_once "../main/auth_inc_cliente.php";
+require_once "../main/auth_inc.php";
 require_once "../main/dbaccess.php";
 
 
@@ -40,7 +40,7 @@ $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
     <header>
         <div class="name-banner">
-            <button name="logout" onclick="location.href='../main/cerrar_sesion.php'"><?php echo $_SESSION['nombre'] ?> </button>
+            <button name="logout" onclick="location.href='../main/cerrar_sesion.php'"><?php echo $_SESSION['correo'] ?> </button>
         </div>
         <nav>
             <ul>

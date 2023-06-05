@@ -29,6 +29,7 @@ if ($enviarPresed) {
     if ($resultado) $mensaje = true;
 
     if (!empty($resultado)) {
+        $_SESSION['rol'] = $resultado['rol'];
 
         if (($resultado['rol'])) {
             $_SESSION['correo'] = $resultado['correo'];
@@ -45,7 +46,7 @@ if ($enviarPresed) {
             $resultado = $stmt->fetch();
 
             $_SESSION['id'] = $resultado['dni'];
-            $_SESSION['nombre'] = $resultado['nombre'];
+            $_SESSION['correo'] = $resultado['correo'];
 
             header("Location: ../vista/vistaReservasPersonal.php");
         }
