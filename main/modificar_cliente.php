@@ -14,8 +14,8 @@
     $usuarioActualizado = false;
 
 //Comprueba si se ha enviado la petición de modificar el cliente
-if(isset($_POST) && !empty($_POST)){
-    $usuarioActualizado = true;
+if(isset($_POST['modificarRegistro'])){
+
     $sql = "UPDATE cliente SET nombre=:nombre, apellido_1=:apellido_1, apellido_2=:apellido_2,correo=:correo, direccion=:direccion, localidad=:localidad, telefono=:telefono WHERE dni=:id";
     $nombre = $_POST['nombre'];
     $apellido1 = $_POST['apellido1'];
@@ -24,16 +24,13 @@ if(isset($_POST) && !empty($_POST)){
     $direccion = $_POST['direccion'];
     $localidad = $_POST['localidad'];
     $telefono = $_POST['telefono'];
+    $dni = $_POST['dni'];
 
     $stmt = $pdo -> prepare($sql);
     $stmt->execute(array(':id'=>$dni, ':nombre'=>$nombre, ':apellido_1'=>$apellido1, ':apellido_2'=>$apellido2, ':correo'=>$correo, ':direccion'=>$direccion, ':localidad'=>$localidad, ':telefono'=>$telefono));
     $stmt -> setFetchMode(PDO::FETCH_ASSOC);
 
-    $_SESSION['nombre'] = $nombre;
-
-    $stmt = $pdo->prepare("SELECT * FROM cliente WHERE dni=:id");
-    $stmt->execute(array(':id' => $dni));
-    $cliente = $stmt->fetch();
+    header("Location: $ruta");
 
 }
     
@@ -104,7 +101,7 @@ if(isset($_POST) && !empty($_POST)){
                 <input type="text" name="telefono" value="<?php echo "".$cliente['telefono']."";?>">
             </div>
             <div class="btn-modificar">
-                <input type="submit" value="Modificar">
+                <input type="submit" name ="modificarRegistro" value="Modificar">
             </div>
             <div style="<?php echo $usuarioActualizado ? "" : "display:none;"; ?>" id="mensajeClienteModificado"><h3>¡Cliente modificado!</h3></div>
         </form>
